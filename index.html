@@ -68,9 +68,8 @@
     50%{box-shadow:0 0 0 8px color-mix(in srgb, var(--accent) 0%, transparent)}}
 
   /* logo */
-  .logo{font-family:var(--font-display);font-weight:700;letter-spacing:-.04em;font-size:22px;line-height:1;
-    display:inline-flex;align-items:baseline;gap:2px}
-  .logo i{font-style:normal;color:var(--accent)}
+  .logo{display:inline-flex;align-items:center;height:32px;line-height:1}
+  .logo img{height:100%;width:auto;display:block}
 
   /* ticker */
   .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;
@@ -288,7 +287,7 @@
 <!-- ─── Nav ─────────────────────────────────────────────────── -->
 <nav class="nav">
   <div class="wrap nav-row">
-    <a href="#" class="logo">Nutra<i>·</i>Media</a>
+    <a href="index.html" class="logo" aria-label="NutraMedia — home"><img src="logos/nutramedialogo.svg" alt="NutraMedia" /></a>
     <div class="nav-links">
       <a href="index.html" class="is-active">Home</a>
       <a href="what-we-do.html">What we do</a>
