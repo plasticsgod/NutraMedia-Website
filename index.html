@@ -101,7 +101,7 @@
     background:var(--line)}
 
   .gcase{position:relative;display:block;background:var(--bg);overflow:hidden;cursor:default}
-  .gcase-thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+  .gcase-thumb{position:relative;aspect-ratio:3/2;overflow:hidden}
 
   /* image placeholder slot — swap inner content for real <img> when ready */
   .gcase-img{position:absolute;inset:0;
@@ -164,10 +164,15 @@
     line-height:1;flex-shrink:0;
     transition:opacity .3s ease}
   .logo-slot:hover{opacity:1}
-  /* if you swap a .logo-slot for <img>, it'll size nicely */
+  /* logo images: flattened to a single ink color regardless of source format/color.
+     50% opacity default, full ink on hover. Works on PNG, JPG, SVG, full-color or mono. */
   .logo-slot img{height:clamp(28px,3vw,44px);width:auto;display:block;
-    filter:grayscale(1);opacity:1;transition:filter .3s ease}
-  .logo-slot:hover img{filter:grayscale(0)}
+    filter:brightness(0);
+    opacity:.5;
+    transition:opacity .3s ease}
+  /* when an img is inside .logo-slot, override the span's own opacity transition */
+  .logo-slot:has(img){opacity:1}
+  .logo-slot:hover img{opacity:1}
   @media (prefers-reduced-motion: reduce){
     .logo-track{animation:none}
   }
@@ -326,10 +331,12 @@
 </section>
 
 <!-- ─── Featured Work ──────────────────────────────────────── -->
-<section class="wrap" id="work">
-  <div class="sec-head" style="padding-left:0;padding-right:0">
-    <h2 class="display">Work that <span class="serif">moves</span><br>off the shelf.</h2>
-    <div class="right">A small selection. Each one shipped, scanned, scaled. Tap any project to see the full case study.</div>
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head" style="padding-left:0;padding-right:0">
+      <h2 class="display">Work that <span class="serif">moves</span><br>off the shelf.</h2>
+      <div class="right">A small selection. Each one shipped, scanned, scaled. Tap any project to see the full case study.</div>
+    </div>
   </div>
 
   <div class="work-grid" id="work-grid">
@@ -392,13 +399,13 @@
 
     <div class="gcase" data-cat="Nutraceuticals">
       <div class="gcase-thumb">
-        <div class="gcase-img" aria-hidden="true">
-          <span class="gcase-img-label">Image — Northbar Recovery</span>
+        <div class="gcase-img">
+          <img src="Images/Lemme.jpeg" alt="Lemme Amazon content" />
         </div>
         <div class="gcase-overlay">
           <div class="gcase-overlay-bot">
-            <div class="gcase-brand">Northbar Recovery</div>
-            <div class="gcase-work">Bottle System · Print</div>
+            <div class="gcase-brand">Lemme</div>
+            <div class="gcase-work">Amazon Content</div>
           </div>
         </div>
       </div>
@@ -406,10 +413,12 @@
 
   </div>
 
-  <div style="margin-top: clamp(64px,7vw,96px); display: flex; justify-content: center;">
-    <a href="#" class="h-pill" style="padding: 14px 22px; font-size: 12px;">
-      View archive — 60+ projects →
-    </a>
+  <div class="wrap">
+    <div style="margin-top: clamp(64px,7vw,96px); display: flex; justify-content: center;">
+      <a href="#" class="h-pill" style="padding: 14px 22px; font-size: 12px;">
+        View archive — 60+ projects →
+      </a>
+    </div>
   </div>
 </section>
 
@@ -463,67 +472,67 @@
   <div class="logo-marquee" aria-hidden="true">
     <div class="logo-row logo-row--left">
       <div class="logo-track">
-        <span class="logo-slot">Vital Daily</span>
-        <span class="logo-slot">Fission</span>
-        <span class="logo-slot">Saltline</span>
-        <span class="logo-slot">Anvil</span>
-        <span class="logo-slot">Northbar</span>
-        <span class="logo-slot">Field+Form</span>
-        <span class="logo-slot">Halo Co.</span>
-        <span class="logo-slot">Drift Spirits</span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
         <!-- duplicate for seamless loop -->
-        <span class="logo-slot">Vital Daily</span>
-        <span class="logo-slot">Fission</span>
-        <span class="logo-slot">Saltline</span>
-        <span class="logo-slot">Anvil</span>
-        <span class="logo-slot">Northbar</span>
-        <span class="logo-slot">Field+Form</span>
-        <span class="logo-slot">Halo Co.</span>
-        <span class="logo-slot">Drift Spirits</span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
       </div>
     </div>
 
     <div class="logo-row logo-row--right">
       <div class="logo-track">
-        <span class="logo-slot">Lumen</span>
-        <span class="logo-slot">Six/Six</span>
-        <span class="logo-slot">Mode Beverage</span>
-        <span class="logo-slot">Honest Stack</span>
-        <span class="logo-slot">Vital Daily</span>
-        <span class="logo-slot">Fission</span>
-        <span class="logo-slot">Northbar</span>
-        <span class="logo-slot">Anvil</span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
         <!-- duplicate -->
-        <span class="logo-slot">Lumen</span>
-        <span class="logo-slot">Six/Six</span>
-        <span class="logo-slot">Mode Beverage</span>
-        <span class="logo-slot">Honest Stack</span>
-        <span class="logo-slot">Vital Daily</span>
-        <span class="logo-slot">Fission</span>
-        <span class="logo-slot">Northbar</span>
-        <span class="logo-slot">Anvil</span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
       </div>
     </div>
 
     <div class="logo-row logo-row--left">
       <div class="logo-track">
-        <span class="logo-slot">Halo Co.</span>
-        <span class="logo-slot">Drift Spirits</span>
-        <span class="logo-slot">Field+Form</span>
-        <span class="logo-slot">Saltline</span>
-        <span class="logo-slot">Lumen</span>
-        <span class="logo-slot">Mode Beverage</span>
-        <span class="logo-slot">Honest Stack</span>
-        <span class="logo-slot">Six/Six</span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
         <!-- duplicate -->
-        <span class="logo-slot">Halo Co.</span>
-        <span class="logo-slot">Drift Spirits</span>
-        <span class="logo-slot">Field+Form</span>
-        <span class="logo-slot">Saltline</span>
-        <span class="logo-slot">Lumen</span>
-        <span class="logo-slot">Mode Beverage</span>
-        <span class="logo-slot">Honest Stack</span>
-        <span class="logo-slot">Six/Six</span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
+        <span class="logo-slot"><img src="Logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
+        <span class="logo-slot"><img src="Logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
+        <span class="logo-slot"><img src="Logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
+        <span class="logo-slot"><img src="Logos/Lemme.svg" alt="Lemme"></span>
       </div>
     </div>
   </div>
