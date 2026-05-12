@@ -97,28 +97,8 @@
   .disc-meta{font-size:13px;color:var(--muted);line-height:1.45;max-width:28ch}
 
   /* work — partizan-style flush grid */
-  .work-filter{display:flex;flex-wrap:wrap;gap:4px;padding:14px 0;
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    margin-bottom:clamp(24px,3vw,40px)}
-  .work-filter-btn{display:inline-flex;align-items:center;gap:8px;
-    padding:8px 14px;border-radius:999px;cursor:pointer;
-    font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--muted);
-    transition:color .25s ease, background .25s ease}
-  .work-filter-btn .dot{width:5px;height:5px;border-radius:99px;
-    background:currentColor;opacity:.4;transition:opacity .25s ease, background .25s ease}
-  .work-filter-btn:hover{color:var(--ink)}
-  .work-filter-btn:hover .dot{opacity:1}
-  .work-filter-btn.is-active{color:var(--ink)}
-  .work-filter-btn.is-active .dot{background:var(--accent);opacity:1}
-
   .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
     background:var(--line)}
-  /* when filtered to fewer items, keep tiles their natural 3-col width
-     instead of stretching and showing empty cells */
-  .work-grid[data-filtered="true"]{grid-template-columns:repeat(auto-fit, minmax(0, calc((100% - 4px) / 3)));
-    justify-content:start;background:transparent;gap:2px}
-  .work-grid[data-filtered="true"] .gcase{outline:1px solid var(--line);outline-offset:0}
 
   .gcase{position:relative;display:block;background:var(--bg);overflow:hidden;cursor:default}
   .gcase-thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
@@ -352,14 +332,6 @@
     <div class="right">A small selection. Each one shipped, scanned, scaled. Tap any project to see the full case study.</div>
   </div>
 
-  <div class="work-filter" id="work-filter" role="tablist" aria-label="Filter work by category">
-    <button type="button" role="tab" aria-selected="true" class="work-filter-btn is-active" data-filter="All"><span class="dot"></span>All</button>
-    <button type="button" role="tab" aria-selected="false" class="work-filter-btn" data-filter="Nutraceuticals"><span class="dot"></span>Nutraceuticals</button>
-    <button type="button" role="tab" aria-selected="false" class="work-filter-btn" data-filter="Energy"><span class="dot"></span>Energy</button>
-    <button type="button" role="tab" aria-selected="false" class="work-filter-btn" data-filter="Hydration"><span class="dot"></span>Hydration</button>
-    <button type="button" role="tab" aria-selected="false" class="work-filter-btn" data-filter="Alcohol"><span class="dot"></span>Alcohol</button>
-  </div>
-
   <div class="work-grid" id="work-grid">
 
     <div class="gcase" data-cat="Nutraceuticals">
@@ -590,36 +562,6 @@
 </footer>
 
 <script>
-  // ─── Work filter ────────────────────────────────────────────
-  (function() {
-    var filter = document.getElementById('work-filter');
-    var grid = document.getElementById('work-grid');
-    if (!filter || !grid) return;
-    var cases = grid.querySelectorAll('.gcase');
-
-    filter.addEventListener('click', function(e) {
-      var btn = e.target.closest('.work-filter-btn');
-      if (!btn) return;
-      var cat = btn.getAttribute('data-filter');
-
-      // toggle active state
-      filter.querySelectorAll('.work-filter-btn').forEach(function(b) {
-        var active = b === btn;
-        b.classList.toggle('is-active', active);
-        b.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-
-      // filter cases
-      cases.forEach(function(c) {
-        var match = (cat === 'All') || (c.getAttribute('data-cat') === cat);
-        c.style.display = match ? '' : 'none';
-      });
-
-      // toggle grid layout: rigid 3-col when 'All', collapse otherwise
-      grid.setAttribute('data-filtered', cat === 'All' ? 'false' : 'true');
-    });
-  })();
-
   // ─── Footer date ────────────────────────────────────────────
   (function() {
     var el = document.getElementById('foot-date');
