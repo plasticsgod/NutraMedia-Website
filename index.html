@@ -172,8 +172,9 @@
     transition:opacity .3s ease}
   /* per-logo size tweaks — stacked or compact logos need more height to match
      the visual weight of wordmark logos at the same scale */
-  .logo-slot img[src*="ANSTACKED"]{height:clamp(48px,5vw,72px)}
-  .logo-slot img[src*="ABE-Logo"]{height:clamp(36px,3.8vw,56px)}
+  .logo-slot img[src*="ANSTACKED"],
+  .logo-slot img[src*="ABE-Logo"],
+  .logo-slot img[src*="NootropicsDepot"]{height:clamp(48px,5vw,72px)}
   /* when an img is inside .logo-slot, override the span's own opacity transition */
   .logo-slot:has(img){opacity:1}
   .logo-slot:hover img{opacity:1}
