@@ -144,6 +144,8 @@
   .retailer-cluster img:hover{transform:scale(1.04)}
   /* Erewhon's wordmark is exceptionally wide — give it a tighter cap to match the others */
   .retailer-cluster img[src*="Erewhon"]{max-width:clamp(90px,10vw,140px)}
+  /* Vitamin Shoppe's source file has a lot of whitespace — let it render larger */
+  .retailer-cluster img[src*="vshoppe"]{height:clamp(48px,5.5vw,80px);max-width:clamp(140px,15vw,220px)}
 
   /* clients — logo marquee (creativecue-style) */
   .clients-section{padding-bottom:clamp(60px,7vw,100px)}
