@@ -135,12 +135,15 @@
   .retailers-section{padding-bottom:clamp(60px,7vw,100px)}
   .retailers-section .sec-head{padding-left:0;padding-right:0}
   .retailer-cluster{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
-    gap:clamp(40px,5vw,80px);padding:clamp(40px,5vw,72px) 0;
+    gap:clamp(40px,5vw,80px) clamp(48px,6vw,96px);padding:clamp(40px,5vw,72px) 0;
     border-top:1px solid var(--line);border-bottom:1px solid var(--line);
     max-width:var(--max);margin:clamp(28px,3.5vw,48px) auto 0}
-  .retailer-cluster img{height:clamp(32px,4vw,56px);width:auto;display:block;
+  .retailer-cluster img{height:clamp(32px,4vw,56px);width:auto;max-width:clamp(110px,12vw,180px);
+    object-fit:contain;display:block;
     transition:transform .3s ease}
   .retailer-cluster img:hover{transform:scale(1.04)}
+  /* Erewhon's wordmark is exceptionally wide — give it a tighter cap to match the others */
+  .retailer-cluster img[src*="Erewhon"]{max-width:clamp(90px,10vw,140px)}
 
   /* clients — logo marquee (creativecue-style) */
   .clients-section{padding-bottom:clamp(60px,7vw,100px)}
