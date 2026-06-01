@@ -266,6 +266,9 @@
     .work-grid{grid-template-columns:1fr}
     /* allow hero to wrap on narrow viewports so it doesn't overflow */
     .hero h1>div{white-space:normal}
+    /* stack capability title above meta text on mobile so they don't collide */
+    .cat-list li{flex-direction:column;align-items:flex-start;gap:12px}
+    .cat-list li .meta{padding-left:36px}
     /* on mobile, show captions by default since hover doesn't exist */
     .gcase-overlay{opacity:1;background:linear-gradient(180deg,
       transparent 0%, transparent 35%,
@@ -446,35 +449,35 @@
         <span class="mono" style="color:var(--muted);font-size:12px">01</span>
         Brand Identity &amp; Strategy
       </span>
-      <span class="meta">Naming, positioning, voice <span style="margin-left:14px;opacity:.5">→</span></span>
+      <span class="meta">Naming, positioning, voice</span>
     </li>
     <li>
       <span style="display:flex;align-items:baseline;gap:20px">
         <span class="mono" style="color:var(--muted);font-size:12px">02</span>
         Packaging Design
       </span>
-      <span class="meta">Concept → production-ready artwork <span style="margin-left:14px;opacity:.5">→</span></span>
+      <span class="meta">Concept → production-ready artwork</span>
     </li>
     <li>
       <span style="display:flex;align-items:baseline;gap:20px">
         <span class="mono" style="color:var(--muted);font-size:12px">03</span>
         Product Visualization
       </span>
-      <span class="meta">3D Photo &amp; Video Renders, mockups <span style="margin-left:14px;opacity:.5">→</span></span>
+      <span class="meta">3D Photo &amp; Video Renders, mockups</span>
     </li>
     <li>
       <span style="display:flex;align-items:baseline;gap:20px">
         <span class="mono" style="color:var(--muted);font-size:12px">04</span>
         Photography &amp; Videography
       </span>
-      <span class="meta">Product, lifestyle, on-shelf <span style="margin-left:14px;opacity:.5">→</span></span>
+      <span class="meta">Product, lifestyle, on-shelf</span>
     </li>
     <li>
       <span style="display:flex;align-items:baseline;gap:20px">
         <span class="mono" style="color:var(--muted);font-size:12px">05</span>
         Channel Content
       </span>
-      <span class="meta">Amazon A+, and listings <span style="margin-left:14px;opacity:.5">→</span></span>
+      <span class="meta">Amazon A+, and listings</span>
     </li>
   </ul>
 </section>
