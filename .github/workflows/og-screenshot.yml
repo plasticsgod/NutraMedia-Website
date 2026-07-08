@@ -1,0 +1,75 @@
+name: Generate social share screenshot
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'social-card.png'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: og-screenshot
+  cancel-in-progress: true
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright + Chromium
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install --no-save playwright http-server wait-on
+          npx playwright install --with-deps chromium
+
+      - name: Resolve site URL (custom domain or GitHub Pages)
+        run: |
+          if [ -f CNAME ]; then
+            SITE="https://$(tr -d '[:space:]' < CNAME)"
+          else
+            OWNER="$(echo "${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]')"
+            REPO="${GITHUB_REPOSITORY#*/}"
+            SITE="https://${OWNER}.github.io/${REPO}"
+          fi
+          echo "SITE=$SITE" >> "$GITHUB_ENV"
+          echo "Resolved site: $SITE"
+
+      - name: Serve site locally
+        run: npx http-server . -p 8080 -s &
+
+      - name: Wait for server
+        run: npx wait-on http://127.0.0.1:8080/index.html
+
+      - name: Capture hero screenshot
+        env:
+          TARGET_URL: http://127.0.0.1:8080/index.html
+        run: node .github/og-screenshot.mjs
+
+      - name: Point OG tags at the resolved URL
+        run: |
+          for f in index.html what-we-do.html about.html; do
+            [ -f "$f" ] || continue
+            sed -i -E "s#(property=\"og:image\" content=\")[^\"]*#\1${SITE}/social-card.png#" "$f"
+            sed -i -E "s#(name=\"twitter:image\" content=\")[^\"]*#\1${SITE}/social-card.png#" "$f"
+            sed -i -E "s#(property=\"og:url\" content=\")[^\"]*#\1${SITE}/${f}#" "$f"
+          done
+
+      - name: Commit changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add social-card.png index.html what-we-do.html about.html
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "chore: refresh social share screenshot + OG urls [skip ci]"
+            git push
+          fi
