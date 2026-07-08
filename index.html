@@ -233,6 +233,21 @@
     font-size:clamp(15px,1.2vw,18px);line-height:1.5}
   .hero-cta-row{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;
     margin-top:clamp(32px,4vw,48px)}
+  /* static pill bar — same format as the nav pill */
+  .hero-pillbar{display:inline-flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:center;
+    background:color-mix(in srgb, var(--ink) 88%, transparent);
+    padding:6px;border-radius:999px;
+    box-shadow:0 12px 30px -14px rgba(14,14,14,.45)}
+  .hero-pillbar a{display:inline-flex;align-items:center;gap:8px;
+    font-size:14px;letter-spacing:-.01em;line-height:1;white-space:nowrap;
+    color:color-mix(in srgb, #fff 78%, transparent);
+    padding:11px 22px;border-radius:999px;
+    transition:background .25s ease,color .25s ease}
+  .hero-pillbar a:hover{color:#fff;background:rgba(255,255,255,.10)}
+  .hero-pillbar a.is-primary,
+  .hero-pillbar a.is-primary:hover{background:#fff;color:var(--ink)}
+  .hero-pillbar a.is-cta,
+  .hero-pillbar a.is-cta:hover{background:var(--accent);color:var(--accent-ink)}
   .hero-stats{display:flex;justify-content:center;gap:clamp(40px,6vw,96px);margin-top:clamp(64px,7vw,96px);
     padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line)}
   .hero-stat{text-align:center;display:flex;flex-direction:column;gap:6px}
@@ -285,6 +300,7 @@
     .nav-row{grid-template-columns:1fr;justify-items:center;height:auto;gap:12px;padding-block:12px}
     .nav-links{flex-wrap:wrap;justify-content:center;max-width:100%}
     .nav-links a{font-size:12px;padding:9px 15px}
+    .hero-pillbar a{font-size:12px;padding:9px 15px}
     .disc-row{grid-template-columns:1fr}
     .disc{border-right:0;border-bottom:1px solid var(--line)}
     .foot-grid{grid-template-columns:1fr}
@@ -340,10 +356,10 @@
   <p class="hero-sub">We are a packaging design studio building category-defining identities for nutraceutical, beverage and lifestyle brands.</p>
 
   <div class="hero-cta-row">
-    <a href="#work" class="h-pill" style="background:var(--ink);color:var(--bg);border:0">
-      <span class="swatch"></span> See selected work →
-    </a>
-    <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener" class="h-pill">Get in touch</a>
+    <div class="hero-pillbar">
+      <a href="#work" class="is-primary">See selected work →</a>
+      <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener" class="is-cta">Get in touch</a>
+    </div>
   </div>
 
   <div class="hero-stats">
