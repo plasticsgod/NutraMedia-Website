@@ -48,8 +48,9 @@
   .display-s{font-size:clamp(28px, 3.8vw, 60px)}
 
   /* nav — floating pill */
-  .nav{position:sticky;top:0;z-index:60;background:transparent}
-  .nav-row{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .nav{position:sticky;top:0;z-index:60;background:transparent;transition:opacity .35s ease,transform .35s ease}
+  .nav.nav--hidden{opacity:0;transform:translateY(-14px);pointer-events:none}
+  .nav-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
   .nav-links{display:flex;gap:2px;align-items:center;
     background:color-mix(in srgb, var(--ink) 88%, transparent);
     backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
@@ -197,6 +198,7 @@
   .logo-slot:hover img{opacity:1}
   @media (prefers-reduced-motion: reduce){
     .logo-track{animation:none}
+    .nav{transition:none}
   }
 
   /* footer */
@@ -280,7 +282,7 @@
     .work-grid{grid-template-columns:repeat(2,1fr)}
   }
   @media (max-width: 640px){
-    .nav-row{flex-wrap:wrap;justify-content:center;height:auto;gap:12px;padding-block:12px}
+    .nav-row{grid-template-columns:1fr;justify-items:center;height:auto;gap:12px;padding-block:12px}
     .nav-links{flex-wrap:wrap;justify-content:center;max-width:100%}
     .nav-links a{font-size:12px;padding:9px 15px}
     .disc-row{grid-template-columns:1fr}
@@ -658,6 +660,23 @@
 </footer>
 
 <script>
+
+  /* hide nav on scroll down, reveal on scroll up (always show near top) */
+  (function(){
+    var nav = document.querySelector(".nav");
+    if(!nav) return;
+    var lastY = window.pageYOffset || 0, ticking = false;
+    function update(){
+      var y = window.pageYOffset || 0;
+      if (y < 80) nav.classList.remove("nav--hidden");
+      else if (y > lastY + 6) nav.classList.add("nav--hidden");
+      else if (y < lastY - 6) nav.classList.remove("nav--hidden");
+      lastY = y; ticking = false;
+    }
+    window.addEventListener("scroll", function(){
+      if(!ticking){ window.requestAnimationFrame(update); ticking = true; }
+    }, {passive:true});
+  })();
 </script>
 
 </body>
