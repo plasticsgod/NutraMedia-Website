@@ -10,14 +10,14 @@
 <meta property="og:site_name" content="NutraMedia" />
 <meta property="og:title" content="NutraMedia — Design & Packaging Studio" />
 <meta property="og:description" content="An independent packaging design studio out of Texas. Building category-defining identities for nutraceutical, beverage and lifestyle brands." />
-<meta property="og:image" content="https://plasticsgod.github.io/NutraMedia-Website/social-card.png" />
+<meta property="og:image" content="https://plasticsgod.github.io/social-card.png" />
 <meta property="og:image:width" content="2400" />
 <meta property="og:image:height" content="1260" />
-<meta property="og:url" content="https://plasticsgod.github.io/NutraMedia-Website/index.html" />
+<meta property="og:url" content="https://plasticsgod.github.io/index.html" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="NutraMedia — Design & Packaging Studio" />
 <meta name="twitter:description" content="An independent packaging design studio out of Texas. Building category-defining identities for nutraceutical, beverage and lifestyle brands." />
-<meta name="twitter:image" content="https://plasticsgod.github.io/NutraMedia-Website/social-card.png" />
+<meta name="twitter:image" content="https://plasticsgod.github.io/social-card.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -349,27 +349,6 @@
       transparent 0%, transparent 35%,
       color-mix(in srgb, var(--ink) 88%, transparent) 100%)}
   }
-  /* work section: left text index + grid */
-  .work-layout{display:grid;grid-template-columns:minmax(170px,210px) 1fr;
-    gap:clamp(28px,3.5vw,60px);align-items:start;
-    max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-  .work-layout .work-grid{grid-template-columns:repeat(2,1fr);max-width:none;padding:0;margin:0}
-
-  .work-index{position:sticky;top:96px;display:flex;flex-direction:column}
-  .work-index h6{margin:0 0 14px;font-size:10.5px;letter-spacing:.12em;
-    text-transform:uppercase;color:var(--muted);font-weight:400}
-  .work-index a{display:flex;align-items:baseline;gap:12px;padding:12px 0;
-    border-top:1px solid var(--line);
-    font-family:var(--font-display);font-weight:600;letter-spacing:-.015em;
-    font-size:clamp(14px,1.15vw,17px);color:var(--ink);text-wrap:balance;
-    transition:color .25s ease,padding-left .25s cubic-bezier(.2,.7,.2,1)}
-  .work-index a:last-child{border-bottom:1px solid var(--line)}
-  .work-index a .idx{font-size:10px;color:var(--muted);letter-spacing:.08em;flex:none}
-  .work-index a:hover{color:var(--accent);padding-left:6px}
-  @media (max-width: 900px){
-    .work-layout{grid-template-columns:1fr}
-    .work-index{position:static}
-  }
 </style>
 </head>
 <body>
@@ -437,18 +416,6 @@
       <div class="right">A small selection. Each one shipped, scanned, scaled. Tap any project to see the full case study.</div>
     </div>
   </div>
-
-  <div class="work-layout">
-
-    <aside class="work-index">
-      <h6 class="mono">Brand Work</h6>
-      <a href="work-kreo.html"><span class="idx mono">01</span><span class="nm">Kreo</span></a>
-      <a href="work-applied-nutrition-abe.html"><span class="idx mono">02</span><span class="nm">Applied Nutrition ABE</span></a>
-      <a href="work-jocko-fuel.html"><span class="idx mono">03</span><span class="nm">Jocko Fuel</span></a>
-      <a href="work-redefine-foods.html"><span class="idx mono">04</span><span class="nm">Redefine Foods</span></a>
-      <a href="work-lemme.html"><span class="idx mono">05</span><span class="nm">Lemme</span></a>
-      <a href="work-fig-brew.html"><span class="idx mono">06</span><span class="nm">Fig Brew</span></a>
-    </aside>
 
   <div class="work-grid" id="work-grid">
 
@@ -536,7 +503,6 @@
       </div>
     </a>
 
-  </div>
   </div>
 
 </section>
