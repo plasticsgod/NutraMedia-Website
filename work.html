@@ -1,26 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>What we do — NutraMedia</title>
-<meta name="description" content="Capabilities at NutraMedia. Brand identity, packaging design, product visualization and photography — all in-house." />
-<!-- Open Graph / social share — og:image & og:url are set automatically by .github/workflows/og-screenshot.yml -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Work — NutraMedia</title>
+<meta name="description" content="Selected brand work by NutraMedia — packaging, identity and content for nutraceutical, beverage and lifestyle brands." />
+<!-- Open Graph / social share -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="NutraMedia" />
-<meta property="og:title" content="What we do — NutraMedia" />
-<meta property="og:description" content="Capabilities at NutraMedia. Brand identity, packaging design, product visualization and photography — all in-house." />
+<meta property="og:title" content="Work — NutraMedia" />
+<meta property="og:description" content="Selected brand work by NutraMedia — packaging, identity and content for nutraceutical, beverage and lifestyle brands." />
 <meta property="og:image" content="https://plasticsgod.github.io/social-card.png" />
 <meta property="og:image:width" content="2400" />
 <meta property="og:image:height" content="1260" />
-<meta property="og:url" content="https://plasticsgod.github.io/what-we-do.html" />
+<meta property="og:url" content="https://plasticsgod.github.io/work.html" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="What we do — NutraMedia" />
-<meta name="twitter:description" content="Capabilities at NutraMedia. Brand identity, packaging design, product visualization and photography — all in-house." />
+<meta name="twitter:title" content="Work — NutraMedia" />
+<meta name="twitter:description" content="Selected brand work by NutraMedia — packaging, identity and content for nutraceutical, beverage and lifestyle brands." />
 <meta name="twitter:image" content="https://plasticsgod.github.io/social-card.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root{
     --bg:#f4f3ef;
@@ -61,7 +61,7 @@
 
   /* display type */
   .display{font-family:var(--font-display);font-weight:700;line-height:.88;letter-spacing:-.035em;text-wrap:balance}
-  .display-xl{font-size:clamp(64px, 13.2vw, 220px)}
+  .display-xl{font-size:clamp(48px, 9vw, 144px)}
   .display-l{font-size:clamp(48px, 9vw, 144px)}
   .display-m{font-size:clamp(40px, 6.4vw, 104px)}
   .display-s{font-size:clamp(28px, 3.8vw, 60px)}
@@ -92,10 +92,10 @@
   /* ticker */
   .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;
     background:var(--bg)}
-  .ticker-track{display:flex;gap:48px;align-items:center;padding:14px 0;
+  .ticker-track{display:flex;align-items:center;padding:14px 0;
     white-space:nowrap;animation:tk 40s linear infinite}
   .ticker span{font-family:var(--font-display);font-weight:600;font-size:clamp(22px,3vw,42px);
-    letter-spacing:-.02em;display:inline-flex;align-items:center;gap:48px}
+    letter-spacing:-.02em;display:inline-flex;align-items:center;gap:48px;padding-right:48px}
   .ticker .star{color:var(--accent);font-size:.7em;display:inline-block;transform:translateY(-.1em)}
   @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
@@ -115,31 +115,14 @@
   .disc-meta{font-size:13px;color:var(--muted);line-height:1.45;max-width:28ch}
 
   /* work — partizan-style flush grid */
-  .work-filter{display:flex;flex-wrap:wrap;gap:4px;padding:14px 0;
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    margin-bottom:clamp(24px,3vw,40px)}
-  .work-filter-btn{display:inline-flex;align-items:center;gap:8px;
-    padding:8px 14px;border-radius:999px;cursor:pointer;
-    font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--muted);
-    transition:color .25s ease, background .25s ease}
-  .work-filter-btn .dot{width:5px;height:5px;border-radius:99px;
-    background:currentColor;opacity:.4;transition:opacity .25s ease, background .25s ease}
-  .work-filter-btn:hover{color:var(--ink)}
-  .work-filter-btn:hover .dot{opacity:1}
-  .work-filter-btn.is-active{color:var(--ink)}
-  .work-filter-btn.is-active .dot{background:var(--accent);opacity:1}
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px);
+    max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 
-  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
-    background:var(--line)}
-  /* when filtered to fewer items, keep tiles their natural 3-col width
-     instead of stretching and showing empty cells */
-  .work-grid[data-filtered="true"]{grid-template-columns:repeat(auto-fit, minmax(0, calc((100% - 4px) / 3)));
-    justify-content:start;background:transparent;gap:2px}
-  .work-grid[data-filtered="true"] .gcase{outline:1px solid var(--line);outline-offset:0}
-
-  .gcase{position:relative;display:block;background:var(--bg);overflow:hidden;cursor:default}
-  .gcase-thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+  .gcase{position:relative;display:block;background:var(--bg);overflow:hidden;cursor:default;
+    border-radius:var(--r-card);box-shadow:var(--shadow-soft);
+    transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s cubic-bezier(.2,.7,.2,1)}
+  .gcase:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift)}
+  .gcase-thumb{position:relative;aspect-ratio:3/2;overflow:hidden}
 
   /* image placeholder slot — swap inner content for real <img> when ready */
   .gcase-img{position:absolute;inset:0;
@@ -174,6 +157,24 @@
     color:color-mix(in srgb, var(--bg) 80%, transparent)}
 
 
+  /* retailers — editorial cluster ("Find our work in") */
+  .retailers-section{padding-bottom:clamp(60px,7vw,100px)}
+  .retailers-section .sec-head{padding-left:0;padding-right:0}
+  .retailer-cluster{display:grid;grid-template-columns:repeat(4,1fr);justify-items:center;align-items:center;
+    gap:clamp(40px,5vw,72px) clamp(32px,4vw,64px);padding:clamp(44px,5vw,76px) clamp(28px,3.5vw,56px);
+    background:var(--surface);border-radius:var(--r-card);box-shadow:var(--shadow-soft);
+    max-width:var(--max);margin:clamp(28px,3.5vw,48px) auto 0}
+  .retailer-cluster img{height:clamp(32px,4vw,56px);width:auto;max-width:100%;
+    object-fit:contain;display:block;
+    transition:transform .3s ease}
+  .retailer-cluster img:hover{transform:scale(1.04)}
+  /* Erewhon's wordmark is exceptionally wide — give it a tighter cap to match the others */
+  .retailer-cluster img[src*="Erewhon"]{max-width:140px}
+  /* Vitamin Shoppe's source file has a lot of whitespace — let it render larger */
+  .retailer-cluster img[src*="vshoppe"]{height:clamp(48px,5.5vw,80px)}
+  @media (max-width: 1024px){.retailer-cluster{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width: 640px){.retailer-cluster{grid-template-columns:repeat(2,1fr);gap:32px}}
+
   /* clients — logo marquee (creativecue-style) */
   .clients-section{padding-bottom:clamp(60px,7vw,100px)}
   .logo-marquee{display:flex;flex-direction:column;gap:18px;
@@ -185,15 +186,15 @@
     border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .logo-track{display:flex;align-items:center;gap:64px;
     white-space:nowrap;width:max-content;padding:22px 32px}
-  .logo-row--left .logo-track{animation:logo-scroll-left 60s linear infinite}
-  .logo-row--right .logo-track{animation:logo-scroll-right 75s linear infinite}
+  .logo-row--left .logo-track{animation:logo-scroll-left 40s linear infinite}
+  .logo-row--right .logo-track{animation:logo-scroll-right 50s linear infinite}
   .logo-marquee:hover .logo-track{animation-play-state:paused}
   @keyframes logo-scroll-left{
     from{transform:translateX(0)}
-    to{transform:translateX(-50%)}
+    to{transform:translateX(-33.3333%)}
   }
   @keyframes logo-scroll-right{
-    from{transform:translateX(-50%)}
+    from{transform:translateX(-33.3333%)}
     to{transform:translateX(0)}
   }
   .logo-slot{font-family:var(--font-display);font-weight:600;
@@ -202,10 +203,21 @@
     line-height:1;flex-shrink:0;
     transition:opacity .3s ease}
   .logo-slot:hover{opacity:1}
-  /* if you swap a .logo-slot for <img>, it'll size nicely */
+  /* logo images: flattened to a single ink color regardless of source format/color.
+     50% opacity default, full ink on hover. Works on PNG, JPG, SVG, full-color or mono. */
   .logo-slot img{height:clamp(28px,3vw,44px);width:auto;display:block;
-    filter:grayscale(1);opacity:1;transition:filter .3s ease}
-  .logo-slot:hover img{filter:grayscale(0)}
+    filter:brightness(0);
+    opacity:.5;
+    transition:opacity .3s ease}
+  /* per-logo size tweaks — stacked or compact logos need more height to match
+     the visual weight of wordmark logos at the same scale */
+  .logo-slot img[src*="ANSTACKED"],
+  .logo-slot img[src*="ABE-Logo"],
+  .logo-slot img[src*="NootropicsDepot"],
+  .logo-slot img[src*="FigBrew"]{height:clamp(48px,5vw,72px)}
+  /* when an img is inside .logo-slot, override the span's own opacity transition */
+  .logo-slot:has(img){opacity:1}
+  .logo-slot:hover img{opacity:1}
   @media (prefers-reduced-motion: reduce){
     .logo-track{animation:none}
     .nav{transition:none}
@@ -235,11 +247,29 @@
     text-align:center}
   .hero-eyebrow{display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:clamp(40px,5vw,72px)}
   .hero h1{margin:0;display:flex;flex-direction:column;align-items:center}
-  .hero h1>div{display:block}
-  .hero-sub{max-width:48ch;margin:clamp(32px,4vw,48px) auto 0;color:var(--muted);
+  .hero h1>div{display:block;white-space:nowrap}
+  .hero-tagline{font-family:var(--font-display);font-weight:600;text-wrap:balance;
+    font-size:clamp(20px,2.2vw,32px);letter-spacing:-.02em;line-height:1.1;
+    color:var(--ink);margin:clamp(20px,2.6vw,32px) auto 0;text-align:center}
+  .hero-sub{max-width:48ch;margin:clamp(20px,2.4vw,28px) auto 0;color:var(--muted);
     font-size:clamp(15px,1.2vw,18px);line-height:1.5}
   .hero-cta-row{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;
     margin-top:clamp(32px,4vw,48px)}
+  /* static pill bar — same format as the nav pill */
+  .hero-pillbar{display:inline-flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:center;
+    background:color-mix(in srgb, var(--ink) 88%, transparent);
+    padding:6px;border-radius:999px;
+    box-shadow:0 12px 30px -14px rgba(14,14,14,.45)}
+  .hero-pillbar a{display:inline-flex;align-items:center;gap:8px;
+    font-size:14px;letter-spacing:-.01em;line-height:1;white-space:nowrap;
+    color:color-mix(in srgb, #fff 78%, transparent);
+    padding:11px 22px;border-radius:999px;
+    transition:background .25s ease,color .25s ease}
+  .hero-pillbar a:hover{color:#fff;background:rgba(255,255,255,.10)}
+  .hero-pillbar a.is-primary,
+  .hero-pillbar a.is-primary:hover{background:#fff;color:var(--ink)}
+  .hero-pillbar a.is-cta,
+  .hero-pillbar a.is-cta:hover{background:var(--accent);color:var(--accent-ink)}
   .hero-stats{display:flex;justify-content:center;gap:clamp(40px,6vw,96px);margin-top:clamp(64px,7vw,96px);
     padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line)}
   .hero-stat{text-align:center;display:flex;flex-direction:column;gap:6px}
@@ -292,10 +322,25 @@
     .nav-row{grid-template-columns:1fr;justify-items:center;height:auto;gap:12px;padding-block:12px}
     .nav-links{flex-wrap:wrap;justify-content:center;max-width:100%}
     .nav-links a{font-size:12px;padding:9px 15px}
+    .hero-pillbar a{font-size:12px;padding:9px 15px}
     .disc-row{grid-template-columns:1fr}
     .disc{border-right:0;border-bottom:1px solid var(--line)}
     .foot-grid{grid-template-columns:1fr}
     .work-grid{grid-template-columns:1fr}
+    /* allow hero to wrap on narrow viewports so it doesn't overflow */
+    .hero h1>div{white-space:normal}
+    /* shrink hero eyebrow pills on mobile + let them wrap to a second line */
+    .hero-eyebrow{flex-wrap:wrap;gap:8px}
+    .h-pill{font-size:10px;padding:6px 12px;gap:8px}
+    .h-pill .swatch{width:10px;height:10px}
+    /* faster, denser marquee on mobile so logos visibly move */
+    .logo-row--left .logo-track{animation-duration:20s}
+    .logo-row--right .logo-track{animation-duration:25s}
+    .logo-track{gap:36px;padding:16px 20px}
+    /* less aggressive edge fade on mobile (was hiding too much) */
+    .logo-marquee{
+      -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+              mask-image:linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%)}
     /* stack capability title above meta text on mobile so they don't collide */
     .cat-list li{flex-direction:column;align-items:flex-start;gap:12px}
     .cat-list li .meta{padding-left:36px}
@@ -305,86 +350,127 @@
       color-mix(in srgb, var(--ink) 88%, transparent) 100%)}
   }
 </style>
+<style>
+  /* ── Brand Work template ───────────────────────────────── */
+  .bw-top{max-width:var(--max);margin:0 auto;padding:clamp(28px,4vw,44px) var(--pad) 0}
+  .bw-back{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .bw-back:hover{color:var(--accent)}
+
+  .bw-layout{display:grid;grid-template-columns:minmax(170px,210px) 1fr;
+    gap:clamp(28px,3.5vw,60px);align-items:start;
+    max-width:var(--max);margin:0 auto;padding:clamp(24px,3vw,40px) var(--pad) 0}
+
+  .bw-hero h1{margin:0;text-wrap:balance}
+  .bw-lead{margin:clamp(20px,2.4vw,30px) 0 0;max-width:46ch;
+    font-size:clamp(16px,1.35vw,20px);line-height:1.55;color:var(--muted)}
+
+  .bw-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:20px;margin:clamp(30px,3.5vw,46px) 0 0;
+    padding:clamp(22px,2.4vw,30px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .bw-meta dt{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  .bw-meta dd{margin:0;font-family:var(--font-display);font-weight:600;
+    font-size:clamp(14px,1.15vw,17px);letter-spacing:-.01em}
+
+  .bw-shot{margin:clamp(34px,4vw,56px) 0 0;border-radius:var(--r-card);overflow:hidden;
+    box-shadow:var(--shadow-soft);background:color-mix(in srgb,var(--ink) 5%,transparent)}
+  .bw-shot img{display:block;width:100%;height:auto}
+
+  .bw-body{margin:clamp(46px,5vw,76px) 0 0;display:grid;gap:clamp(34px,4vw,56px)}
+  .bw-block h2{margin:0 0 14px;font-family:var(--font-display);font-weight:700;
+    font-size:clamp(24px,2.6vw,38px);letter-spacing:-.03em;text-wrap:balance}
+  .bw-block p{margin:0;max-width:62ch;font-size:clamp(15px,1.15vw,17px);
+    line-height:1.65;color:var(--muted)}
+
+  /* gallery — drop more <img> in as artwork is ready */
+  .bw-gallery{margin:clamp(46px,5vw,76px) 0 0;display:grid;
+    grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.6vw,22px)}
+  .bw-slot{aspect-ratio:4/3;border-radius:var(--r-card);overflow:hidden;
+    box-shadow:var(--shadow-soft);
+    background:color-mix(in srgb,var(--ink) 6%,transparent);
+    background-image:repeating-linear-gradient(135deg,
+      color-mix(in srgb,var(--ink) 5%,transparent) 0 1px, transparent 1px 16px);
+    display:flex;align-items:center;justify-content:center}
+  .bw-slot img{width:100%;height:100%;object-fit:cover;display:block}
+  .bw-slot span{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted);padding:6px 10px;background:var(--bg);
+    border:1px solid var(--line);border-radius:var(--r-chip)}
+  .bw-slot:has(img) span{display:none}
+
+  .bw-next{margin:clamp(56px,6vw,90px) 0 clamp(20px,3vw,40px);
+    display:flex;justify-content:center}
+
+  /* ── Left text index (shared with home work section) ───── */
+  .work-index{position:sticky;top:96px;display:flex;flex-direction:column}
+  .work-index h6{margin:0 0 14px;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);font-weight:400}
+  .work-index a{display:flex;align-items:baseline;gap:12px;padding:12px 0;
+    border-top:1px solid var(--line);
+    font-family:var(--font-display);font-weight:600;letter-spacing:-.015em;
+    font-size:clamp(14px,1.15vw,17px);color:var(--ink);text-wrap:balance;
+    transition:color .25s ease,padding-left .25s cubic-bezier(.2,.7,.2,1)}
+  .work-index a:last-child{border-bottom:1px solid var(--line)}
+  .work-index a .idx{font-size:10px;color:var(--muted);letter-spacing:.08em;flex:none}
+  .work-index a:hover{color:var(--accent);padding-left:6px}
+  .work-index a.is-current{color:var(--accent)}
+  .work-index a.is-current .idx{color:var(--accent)}
+
+  @media (max-width: 900px){
+    .bw-layout{grid-template-columns:1fr}
+    .work-index{position:static}
+    .bw-gallery{grid-template-columns:1fr}
+  }
+</style>
+
+<style>
+  /* work.html — empty state */
+  .work-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;min-height:min(58vh,520px);padding:clamp(30px,5vw,60px) 0}
+  .work-empty h1{margin:0;max-width:18ch;text-wrap:balance}
+  .work-empty .arrow{margin:clamp(24px,3vw,36px) 0 0;font-family:var(--font-mono);
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  @media (max-width: 900px){ .work-empty{min-height:auto;padding-top:clamp(24px,5vw,40px)} }
+</style>
+
 </head>
 <body>
 
-<!-- ─── Nav ─────────────────────────────────────────────────── -->
+<!-- ─── Nav ──────────────────────────────────── -->
 <nav class="nav">
   <div class="wrap nav-row">
     <a href="index.html" class="logo" aria-label="NutraMedia — home"><img src="logos/nutramedialogo.svg" alt="NutraMedia" /></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="what-we-do.html" class="is-active">What we do</a>
-      <a href="work.html">Work</a>
+      <a href="what-we-do.html">What we do</a>
+      <a href="work.html" class="is-active">Work</a>
       <a href="about.html">About</a>
       <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener" class="nav-cta cta">Get in touch</a>
     </div>
   </div>
 </nav>
 
+<!-- ─── Work index ──────────────────────────── -->
+<div class="bw-layout">
 
+    <aside class="work-index">
+      <h6 class="mono">Brand Work</h6>
+      <a href="work-kreo.html"><span class="idx mono">01</span><span class="nm">Kreo</span></a>
+      <a href="work-applied-nutrition-abe.html"><span class="idx mono">02</span><span class="nm">Applied Nutrition ABE</span></a>
+      <a href="work-jocko-fuel.html"><span class="idx mono">03</span><span class="nm">Jocko Fuel</span></a>
+      <a href="work-redefine-foods.html"><span class="idx mono">04</span><span class="nm">Redefine Foods</span></a>
+      <a href="work-lemme.html"><span class="idx mono">05</span><span class="nm">Lemme</span></a>
+      <a href="work-fig-brew.html"><span class="idx mono">06</span><span class="nm">Fig Brew</span></a>
+    </aside>
 
-<!-- ─── Page Hero ──────────────────────────────────────────── -->
-<section class="hero wrap" style="padding:clamp(40px,7vw,120px) 0 clamp(20px,3vw,40px)">
-  <h1 class="display display-l">
-    <div>Everything between</div>
-    <div>brief and bottle.</div>
-  </h1>
+  <main>
+    <div class="work-empty">
+      <h1 class="display display-l">Choose a brand we've <span class="serif">worked with</span> to see our work!</h1>
+      <p class="arrow">← Pick a brand from the list</p>
+    </div>
+  </main>
 
-  <p class="hero-sub">Strategy, design, structural, photography, motion — one contract, one timeline, one team.</p>
-</section>
-
-<!-- ─── Capabilities ────────────────────────────────────────── -->
-<section class="wrap" style="padding-top:clamp(40px,6vw,80px); padding-bottom:clamp(60px,7vw,100px)">
-  <ul class="cat-list">
-    <li>
-      <span style="display:flex;align-items:baseline;gap:20px">
-        <span class="mono" style="color:var(--muted);font-size:12px">01</span>
-        Brand Identity &amp; Strategy
-      </span>
-      <span class="meta">Naming, positioning, voice</span>
-    </li>
-    <li>
-      <span style="display:flex;align-items:baseline;gap:20px">
-        <span class="mono" style="color:var(--muted);font-size:12px">02</span>
-        Packaging Design
-      </span>
-      <span class="meta">Concept → production-ready artwork</span>
-    </li>
-    <li>
-      <span style="display:flex;align-items:baseline;gap:20px">
-        <span class="mono" style="color:var(--muted);font-size:12px">03</span>
-        Product Visualization
-      </span>
-      <span class="meta">3D Photo &amp; Video Renders, mockups</span>
-    </li>
-    <li>
-      <span style="display:flex;align-items:baseline;gap:20px">
-        <span class="mono" style="color:var(--muted);font-size:12px">04</span>
-        Photography &amp; Videography
-      </span>
-      <span class="meta">Product, lifestyle, on-shelf</span>
-    </li>
-    <li>
-      <span style="display:flex;align-items:baseline;gap:20px">
-        <span class="mono" style="color:var(--muted);font-size:12px">05</span>
-        Channel Content
-      </span>
-      <span class="meta">Amazon A+, and listings</span>
-    </li>
-  </ul>
-</section>
-
-<!-- ─── Closing CTA ─────────────────────────────────────────── -->
-<section class="wrap" style="padding-top:clamp(40px,5vw,80px); padding-bottom:clamp(80px,10vw,140px); text-align:center">
-  <p class="mono" style="color:var(--muted); margin-bottom:24px">Have a brief?</p>
-  <h2 class="display display-m" style="margin:0 0 clamp(28px,4vw,40px)">
-    Let's <span class="serif">build it.</span>
-  </h2>
-  <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener" class="h-pill" style="background:var(--ink);color:var(--bg);border:0;padding:12px 22px;font-size:12px">
-    Start a project →
-  </a>
-</section>
+</div>
 
 <!-- ─── Footer ──────────────────────────────────────────────── -->
 <footer class="foot" id="contact">
@@ -421,36 +507,6 @@
 </footer>
 
 <script>
-  // ─── Work filter ────────────────────────────────────────────
-  (function() {
-    var filter = document.getElementById('work-filter');
-    var grid = document.getElementById('work-grid');
-    if (!filter || !grid) return;
-    var cases = grid.querySelectorAll('.gcase');
-
-    filter.addEventListener('click', function(e) {
-      var btn = e.target.closest('.work-filter-btn');
-      if (!btn) return;
-      var cat = btn.getAttribute('data-filter');
-
-      // toggle active state
-      filter.querySelectorAll('.work-filter-btn').forEach(function(b) {
-        var active = b === btn;
-        b.classList.toggle('is-active', active);
-        b.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-
-      // filter cases
-      cases.forEach(function(c) {
-        var match = (cat === 'All') || (c.getAttribute('data-cat') === cat);
-        c.style.display = match ? '' : 'none';
-      });
-
-      // toggle grid layout: rigid 3-col when 'All', collapse otherwise
-      grid.setAttribute('data-filtered', cat === 'All' ? 'false' : 'true');
-    });
-  })();
-
 
   /* hide nav on scroll down, reveal on scroll up (always show near top) */
   (function(){
