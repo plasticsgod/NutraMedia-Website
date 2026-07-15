@@ -375,8 +375,10 @@
     font-size:clamp(14px,1.15vw,17px);letter-spacing:-.01em}
 
   .bw-shot{margin:clamp(34px,4vw,56px) 0 0;border-radius:var(--r-card);overflow:hidden;
-    box-shadow:var(--shadow-soft);background:color-mix(in srgb,var(--ink) 5%,transparent)}
-  .bw-shot img{display:block;width:100%;height:auto}
+    box-shadow:var(--shadow-soft);background:color-mix(in srgb,var(--ink) 5%,transparent);
+    display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,24px)}
+  .bw-shot img{display:block;width:auto;height:auto;max-width:100%;
+    max-height:clamp(300px,46vh,500px);border-radius:calc(var(--r-card) - 8px)}
 
   .bw-body{margin:clamp(46px,5vw,76px) 0 0;display:grid;gap:clamp(34px,4vw,56px)}
   .bw-block h2{margin:0 0 14px;font-family:var(--font-display);font-weight:700;
