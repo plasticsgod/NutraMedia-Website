@@ -398,6 +398,9 @@
     text-transform:uppercase;color:var(--muted);padding:6px 10px;background:var(--bg);
     border:1px solid var(--line);border-radius:var(--r-chip)}
   .bw-slot:has(img) span{display:none}
+  .bw-slot:has(img){aspect-ratio:auto;background:none}
+  .bw-slot:has(img) img{height:auto}
+  .bw-gallery{align-items:start}
 
   .bw-next{margin:clamp(56px,6vw,90px) 0 clamp(20px,3vw,40px);
     display:flex;justify-content:center}
@@ -489,10 +492,8 @@
 
     <!-- Gallery — swap each <div class="bw-slot"> for <div class="bw-slot"><img src="..." alt="..."></div> -->
     <div class="bw-gallery">
-      <div class="bw-slot"><span>Add image</span></div>
-      <div class="bw-slot"><span>Add image</span></div>
-      <div class="bw-slot"><span>Add image</span></div>
-      <div class="bw-slot"><span>Add image</span></div>
+      <div class="bw-slot"><img src="Images/Kreo1.jpeg" alt="Kreo packaging by NutraMedia"></div>
+      <div class="bw-slot"><img src="Images/Kreo2.jpeg" alt="Kreo packaging by NutraMedia"></div>
     </div>
 
     <div class="bw-next">
