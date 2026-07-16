@@ -385,20 +385,26 @@
     line-height:1.65;color:var(--muted)}
 
   /* gallery — drop more <img> in as artwork is ready */
-  .bw-gallery{margin:clamp(46px,5vw,76px) 0 0;display:grid;
-    grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.6vw,22px)}
-  .bw-slot{aspect-ratio:4/3;border-radius:var(--r-card);overflow:hidden;
-    box-shadow:var(--shadow-soft);
+  /* gallery — fixed-height filmstrip: every item shares one height, no crop */
+  .bw-gallery{margin:clamp(46px,5vw,76px) 0 0;display:flex;flex-wrap:wrap;
+    gap:clamp(14px,1.6vw,22px);align-items:flex-start;
+    --gal-h:clamp(230px,26vw,320px)}
+  .bw-slot{height:var(--gal-h);border-radius:var(--r-card);overflow:hidden;
+    box-shadow:var(--shadow-soft);position:relative;
     background:color-mix(in srgb,var(--ink) 6%,transparent);
-    background-image:repeating-linear-gradient(135deg,
-      color-mix(in srgb,var(--ink) 5%,transparent) 0 1px, transparent 1px 16px);
     display:flex;align-items:center;justify-content:center}
-  .bw-slot img{width:100%;height:100%;object-fit:cover;display:block}
+  .bw-slot img{height:100%;width:auto;display:block}
   .bw-slot span{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
     text-transform:uppercase;color:var(--muted);padding:6px 10px;background:var(--bg);
     border:1px solid var(--line);border-radius:var(--r-chip)}
   .bw-slot:has(img) span{display:none}
-  .bw-slot.is-video{aspect-ratio:auto;background:none;display:block}
+  .bw-slot:not(:has(img)):not(.is-video){width:calc(var(--gal-h) * .72);
+    background-image:repeating-linear-gradient(135deg,
+      color-mix(in srgb,var(--ink) 5%,transparent) 0 1px, transparent 1px 16px)}
+  /* video: matches gallery height; --vid-ar = width/height (4:3=1.3333, 9:16=.5625) */
+  .bw-slot.is-video{display:block;height:auto;background:none;
+    width:calc(var(--gal-h) * var(--vid-ar, 1.3333))}
+  .bw-slot.is-video > div{width:100%}
   .bw-vid-unmute{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;
     background:transparent;cursor:pointer;z-index:2}
   .bw-vid-hint{position:absolute;bottom:12px;right:12px;font-family:var(--font-mono);
@@ -428,7 +434,7 @@
   @media (max-width: 900px){
     .bw-layout{grid-template-columns:1fr}
     .work-index{position:static}
-    .bw-gallery{grid-template-columns:1fr}
+    .bw-gallery{--gal-h:clamp(200px,46vw,270px);justify-content:center}
   }
 </style>
 
@@ -497,8 +503,11 @@
 
     <!-- Gallery — videos & imagery. Add more: <div class="bw-slot"><img src="..." alt="..."></div> or another .bw-slot.is-video -->
     <div class="bw-gallery">
-      <div class="bw-slot is-video">
+      <div class="bw-slot is-video" style="--vid-ar:1.3333">
         <div style="padding:75% 0 0 0;position:relative;"><iframe id="jocko-vid-1" src="https://player.vimeo.com/video/1210598876?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="JockoVid1"></iframe><button class="bw-vid-unmute" data-target="jocko-vid-1" aria-label="Tap to toggle sound"><span class="bw-vid-hint">◂» Tap for sound</span></button></div>
+      </div>
+      <div class="bw-slot is-video" style="--vid-ar:.5625">
+        <div style="padding:177.78% 0 0 0;position:relative;"><iframe id="jocko-vid-2" src="https://player.vimeo.com/video/1210609490?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="JockoVid2"></iframe><button class="bw-vid-unmute" data-target="jocko-vid-2" aria-label="Tap to toggle sound"><span class="bw-vid-hint">◂» Tap for sound</span></button></div>
       </div>
       <div class="bw-slot"><span>Add image</span></div>
     </div>

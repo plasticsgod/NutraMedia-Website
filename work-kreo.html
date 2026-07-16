@@ -403,7 +403,7 @@
       color-mix(in srgb,var(--ink) 5%,transparent) 0 1px, transparent 1px 16px)}
   /* video: matches gallery height, keeps its embed ratio (4:3 here) */
   .bw-slot.is-video{display:block;height:auto;background:none;
-    width:calc(var(--gal-h) * 4 / 3)}
+    width:calc(var(--gal-h) * var(--vid-ar, 1.3333))}
   .bw-slot.is-video > div{width:100%}
   .bw-vid-unmute{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;
     background:transparent;cursor:pointer;z-index:2}
@@ -503,8 +503,8 @@
 
     <!-- Gallery — swap each <div class="bw-slot"> for <div class="bw-slot"><img src="..." alt="..."></div> -->
     <div class="bw-gallery">
-      <div class="bw-slot is-video">
-        <div style="padding:75% 0 0 0;position:relative;"><iframe id="kreo-vid-1" src="https://player.vimeo.com/video/1210604210?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="KreoVid1"></iframe><button class="bw-vid-unmute" data-target="kreo-vid-1" aria-label="Tap to toggle sound"><span class="bw-vid-hint">◂» Tap for sound</span></button></div>
+      <div class="bw-slot is-video" style="--vid-ar:.5625">
+        <div style="padding:177.78% 0 0 0;position:relative;"><iframe id="kreo-vid-1" src="https://player.vimeo.com/video/1210604210?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="KreoVid1"></iframe><button class="bw-vid-unmute" data-target="kreo-vid-1" aria-label="Tap to toggle sound"><span class="bw-vid-hint">◂» Tap for sound</span></button></div>
       </div>
       <div class="bw-slot"><img src="Images/Kreo1.jpeg" alt="Kreo packaging by NutraMedia"></div>
       <div class="bw-slot"><img src="Images/Kreo2.jpeg" alt="Kreo packaging by NutraMedia"></div>
