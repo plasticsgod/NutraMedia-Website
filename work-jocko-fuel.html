@@ -399,6 +399,13 @@
     border:1px solid var(--line);border-radius:var(--r-chip)}
   .bw-slot:has(img) span{display:none}
   .bw-slot.is-video{aspect-ratio:auto;background:none;display:block}
+  .bw-vid-unmute{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;
+    background:transparent;cursor:pointer;z-index:2}
+  .bw-vid-hint{position:absolute;bottom:12px;right:12px;font-family:var(--font-mono);
+    font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#fff;
+    background:rgba(14,14,14,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    padding:7px 12px;border-radius:999px;pointer-events:none;transition:opacity .3s ease}
+  .bw-vid-unmute.is-unmuted .bw-vid-hint{opacity:0}
 
   .bw-next{margin:clamp(56px,6vw,90px) 0 clamp(20px,3vw,40px);
     display:flex;justify-content:center}
@@ -491,7 +498,7 @@
     <!-- Gallery — videos & imagery. Add more: <div class="bw-slot"><img src="..." alt="..."></div> or another .bw-slot.is-video -->
     <div class="bw-gallery">
       <div class="bw-slot is-video">
-        <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1210598876?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="JockoVid1"></iframe></div>
+        <div style="padding:75% 0 0 0;position:relative;"><iframe id="jocko-vid-1" src="https://player.vimeo.com/video/1210598876?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="JockoVid1"></iframe><button class="bw-vid-unmute" data-target="jocko-vid-1" aria-label="Tap to toggle sound"><span class="bw-vid-hint">◂» Tap for sound</span></button></div>
       </div>
       <div class="bw-slot"><span>Add image</span></div>
     </div>
@@ -541,6 +548,23 @@
 </footer>
 
 <script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  /* click video to toggle sound (starts muted for autoplay) */
+  (function(){
+    if(!window.Vimeo) return;
+    document.querySelectorAll('.bw-vid-unmute').forEach(function(btn){
+      var iframe = document.getElementById(btn.getAttribute('data-target'));
+      if(!iframe) return;
+      var player = new Vimeo.Player(iframe);
+      btn.addEventListener('click', function(){
+        player.getMuted().then(function(muted){
+          player.setMuted(!muted);
+          btn.classList.toggle('is-unmuted', muted);
+        });
+      });
+    });
+  })();
+</script>
 <script>
 
   /* hide nav on scroll down, reveal on scroll up (always show near top) */
