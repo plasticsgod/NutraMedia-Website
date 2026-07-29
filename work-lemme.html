@@ -385,19 +385,33 @@
     line-height:1.65;color:var(--muted)}
 
   /* gallery — drop more <img> in as artwork is ready */
-  .bw-gallery{margin:clamp(46px,5vw,76px) 0 0;display:grid;
-    grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.6vw,22px)}
-  .bw-slot{aspect-ratio:4/3;border-radius:var(--r-card);overflow:hidden;
-    box-shadow:var(--shadow-soft);
+  /* gallery — fixed-height filmstrip: every item shares one height, no crop */
+  .bw-gallery{margin:clamp(46px,5vw,76px) 0 0;display:flex;flex-wrap:wrap;
+    gap:clamp(14px,1.6vw,22px);align-items:flex-start;
+    --gal-h:clamp(230px,26vw,320px)}
+  .bw-slot{height:var(--gal-h);border-radius:var(--r-card);overflow:hidden;
+    box-shadow:var(--shadow-soft);position:relative;
     background:color-mix(in srgb,var(--ink) 6%,transparent);
-    background-image:repeating-linear-gradient(135deg,
-      color-mix(in srgb,var(--ink) 5%,transparent) 0 1px, transparent 1px 16px);
     display:flex;align-items:center;justify-content:center}
-  .bw-slot img{width:100%;height:100%;object-fit:cover;display:block}
+  .bw-slot img{height:100%;width:auto;display:block}
   .bw-slot span{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
     text-transform:uppercase;color:var(--muted);padding:6px 10px;background:var(--bg);
     border:1px solid var(--line);border-radius:var(--r-chip)}
   .bw-slot:has(img) span{display:none}
+  .bw-slot:not(:has(img)):not(.is-video){width:calc(var(--gal-h) * .72);
+    background-image:repeating-linear-gradient(135deg,
+      color-mix(in srgb,var(--ink) 5%,transparent) 0 1px, transparent 1px 16px)}
+  /* video: matches gallery height; --vid-ar = width/height (4:3=1.3333, 9:16=.5625) */
+  .bw-slot.is-video{display:block;height:auto;background:none;
+    width:calc(var(--gal-h) * var(--vid-ar, 1.3333))}
+  .bw-slot.is-video > div{width:100%}
+  .bw-vid-unmute{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;
+    background:transparent;cursor:pointer;z-index:2}
+  .bw-vid-hint{position:absolute;bottom:12px;right:12px;font-family:var(--font-mono);
+    font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#fff;
+    background:rgba(14,14,14,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    padding:7px 12px;border-radius:999px;pointer-events:none;transition:opacity .3s ease}
+  .bw-vid-unmute.is-unmuted .bw-vid-hint{opacity:0}
 
   .bw-next{margin:clamp(56px,6vw,90px) 0 clamp(20px,3vw,40px);
     display:flex;justify-content:center}
@@ -420,7 +434,7 @@
   @media (max-width: 900px){
     .bw-layout{grid-template-columns:1fr}
     .work-index{position:static}
-    .bw-gallery{grid-template-columns:1fr}
+    .bw-gallery{--gal-h:clamp(200px,46vw,270px);justify-content:center}
   }
 </style>
 
@@ -489,9 +503,8 @@
 
     <!-- Gallery — swap each <div class="bw-slot"> for <div class="bw-slot"><img src="..." alt="..."></div> -->
     <div class="bw-gallery">
-      <div class="bw-slot"><span>Add image</span></div>
-      <div class="bw-slot"><span>Add image</span></div>
-      <div class="bw-slot"><span>Add image</span></div>
+      <div class="bw-slot"><img src="Images/LM2.png" alt="Lemme packaging by NutraMedia"></div>
+      <div class="bw-slot"><img src="Images/LM1.png" alt="Lemme packaging by NutraMedia"></div>
       <div class="bw-slot"><span>Add image</span></div>
     </div>
 
