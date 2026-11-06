@@ -385,11 +385,13 @@
 <style>
   /* ── smooth marquee + ticker (esp. iPhone) ─────────────── */
   /* GPU layers, no per-frame repaint */
-  .logo-track,.ticker-track{will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+  .ticker-track{will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+  /* logo strip: plain 2D transform, no forced 3D layer — iOS Safari drops very wide 3D layers */
+  .logo-track{will-change:auto;backface-visibility:visible;-webkit-backface-visibility:visible}
   @keyframes tk{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-  @keyframes logo-scroll-left{from{transform:translate3d(0,0,0)}to{transform:translate3d(-33.3333%,0,0)}}
-  @keyframes logo-scroll-right{from{transform:translate3d(-33.3333%,0,0)}to{transform:translate3d(0,0,0)}}
-  /* seamless loop: spacing lives on each logo, so one third of the track is exactly one set */
+  @keyframes logo-scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes logo-scroll-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  /* seamless loop: spacing lives on each logo, so half of the track is exactly one set */
   .logo-marquee{--mq-gap:64px}
   .logo-track{gap:0;padding-left:0;padding-right:0}
   .logo-slot{padding-right:var(--mq-gap)}
@@ -672,17 +674,6 @@
         <span class="logo-slot"><img src="logos/BBLogo.png" alt="Beast Bites"></span>
         <span class="logo-slot"><img src="logos/Primeval%20Logo.png" alt="Primeval"></span>
         <span class="logo-slot"><img src="logos/Lemme.svg" alt="Lemme"></span>
-        <!-- duplicate 2 for seamless loop -->
-        <span class="logo-slot"><img src="logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
-        <span class="logo-slot"><img src="logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
-        <span class="logo-slot"><img src="logos/Redefine%20foods.svg" alt="Redefine Foods"></span>
-        <span class="logo-slot"><img src="logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
-        <span class="logo-slot"><img src="logos/FigBrewLogo.png" alt="Fig Brew"></span>
-        <span class="logo-slot"><img src="logos/nutrabio-logo.png" alt="NutraBio"></span>
-        <span class="logo-slot"><img src="logos/NootropicsDepot_logo_black.png" alt="Nootropics Depot"></span>
-        <span class="logo-slot"><img src="logos/BBLogo.png" alt="Beast Bites"></span>
-        <span class="logo-slot"><img src="logos/Primeval%20Logo.png" alt="Primeval"></span>
-        <span class="logo-slot"><img src="logos/Lemme.svg" alt="Lemme"></span>
       </div>
     </div>
 
@@ -699,17 +690,6 @@
         <span class="logo-slot"><img src="logos/FigBrewLogo.png" alt="Fig Brew"></span>
         <span class="logo-slot"><img src="logos/NootropicsDepot_logo_black.png" alt="Nootropics Depot"></span>
         <!-- duplicate 1 for seamless loop -->
-        <span class="logo-slot"><img src="logos/Lemme.svg" alt="Lemme"></span>
-        <span class="logo-slot"><img src="logos/nutrabio-logo.png" alt="NutraBio"></span>
-        <span class="logo-slot"><img src="logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
-        <span class="logo-slot"><img src="logos/BBLogo.png" alt="Beast Bites"></span>
-        <span class="logo-slot"><img src="logos/Primeval%20Logo.png" alt="Primeval"></span>
-        <span class="logo-slot"><img src="logos/ABE-Logo-Black.png" alt="Applied Nutrition ABE"></span>
-        <span class="logo-slot"><img src="logos/Redefine%20foods.svg" alt="Redefine Foods"></span>
-        <span class="logo-slot"><img src="logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel"></span>
-        <span class="logo-slot"><img src="logos/FigBrewLogo.png" alt="Fig Brew"></span>
-        <span class="logo-slot"><img src="logos/NootropicsDepot_logo_black.png" alt="Nootropics Depot"></span>
-        <!-- duplicate 2 for seamless loop -->
         <span class="logo-slot"><img src="logos/Lemme.svg" alt="Lemme"></span>
         <span class="logo-slot"><img src="logos/nutrabio-logo.png" alt="NutraBio"></span>
         <span class="logo-slot"><img src="logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition Performance"></span>
