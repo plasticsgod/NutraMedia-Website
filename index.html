@@ -393,9 +393,10 @@
   .logo-marquee{--mq-gap:64px}
   .logo-track{gap:0;padding-left:0;padding-right:0}
   .logo-slot{padding-right:var(--mq-gap)}
-  /* recolor the whole strip once instead of filtering 60 images every frame */
-  .logo-slot img{filter:none}
-  .logo-track{filter:brightness(0)}
+  /* recolor each logo, not the whole strip: a filter on the 5000px-wide track forces iOS Safari
+     into one giant un-tiled layer, which it blurs or drops entirely (blank second row) */
+  .logo-track{filter:none}
+  .logo-slot img{filter:brightness(0)}
   /* never pause or highlight on hover/tap — the strip always runs, every logo stays the same tone */
   .logo-marquee:hover .logo-track,.logo-marquee:active .logo-track{animation-play-state:running}
   .logo-slot,.logo-slot img{transition:none}
