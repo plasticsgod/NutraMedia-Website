@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CPG Graphic Design Agency — Branding &amp; Packaging for CPG Brands | NutraMedia</title>
+<link rel="canonical" href="https://nutramedia.co/cpg-graphic-design.html" />
+<meta name="description" content="NutraMedia is a CPG graphic design agency for supplement, food and beverage brands: brand identity, packaging design, 3D renders and Amazon content, all in-house." />
+<!-- Open Graph / social share — og:image & og:url are set automatically by .github/workflows/og-screenshot.yml -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NutraMedia" />
+<meta property="og:title" content="CPG Graphic Design Agency — Branding &amp; Packaging for CPG Brands | NutraMedia" />
+<meta property="og:description" content="NutraMedia is a CPG graphic design agency for supplement, food and beverage brands: brand identity, packaging design, 3D renders and Amazon content, all in-house." />
+<meta property="og:image" content="https://nutramedia.co/social-card.png" />
+<meta property="og:image:width" content="2400" />
+<meta property="og:image:height" content="1260" />
+<meta property="og:url" content="https://nutramedia.co/cpg-graphic-design.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CPG Graphic Design Agency — Branding &amp; Packaging for CPG Brands | NutraMedia" />
+<meta name="twitter:description" content="NutraMedia is a CPG graphic design agency for supplement, food and beverage brands: brand identity, packaging design, 3D renders and Amazon content, all in-house." />
+<meta name="twitter:image" content="https://nutramedia.co/social-card.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#f4f3ef;
+    --ink:#0e0e0e;
+    --ink-2:#1a1a1a;
+    --muted:rgba(14,14,14,.55);
+    --line:rgba(14,14,14,.14);
+    --accent:#ff1f7a;
+    --accent-ink:#0e0e0e;
+    --surface:#fbfaf7;
+    --r-chip:10px;
+    --r-card:18px;
+    --r-lg:24px;
+    --shadow-soft:0 2px 8px -3px rgba(14,14,14,.06), 0 14px 34px -16px rgba(14,14,14,.22);
+    --shadow-lift:0 8px 20px -6px rgba(14,14,14,.12), 0 26px 54px -22px rgba(14,14,14,.32);
+    --max:1480px;
+    --pad:clamp(20px, 3.5vw, 56px);
+    --font-display:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-body:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-serif:"Instrument Serif", "Times New Roman", serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:var(--font-body);font-feature-settings:"ss01","cv11";
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-optical-sizing:auto}
+  body{overflow-x:hidden;text-wrap:pretty}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:transparent;border:0;cursor:pointer;padding:0}
+  ::selection{background:var(--accent);color:#fff}
+
+  /* utility */
+  .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+  .mono{font-family:var(--font-mono);font-weight:500;letter-spacing:.02em;text-transform:uppercase;font-size:11px}
+  .serif{font-family:var(--font-serif);font-style:italic}
+  .hairline{height:1px;background:var(--line);border:0}
+  .vhairline{width:1px;background:var(--line)}
+
+  /* display type */
+  .display{font-family:var(--font-display);font-weight:700;line-height:.88;letter-spacing:-.035em;text-wrap:balance}
+  .display-xl{font-size:clamp(64px, 13.2vw, 220px)}
+  .display-l{font-size:clamp(48px, 9vw, 144px)}
+  .display-m{font-size:clamp(40px, 6.4vw, 104px)}
+  .display-s{font-size:clamp(28px, 3.8vw, 60px)}
+
+  /* nav — floating pill */
+  .nav{position:sticky;top:0;z-index:60;background:transparent;transition:opacity .35s ease,transform .35s ease}
+  .nav.nav--hidden{opacity:0;transform:translateY(-14px);pointer-events:none}
+  .nav-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
+  .nav-links{display:flex;gap:2px;align-items:center;
+    background:color-mix(in srgb, var(--ink) 88%, transparent);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    padding:6px;border-radius:999px;
+    box-shadow:0 12px 30px -14px rgba(14,14,14,.45)}
+  .nav-links a{font-size:14px;letter-spacing:-.01em;line-height:1;white-space:nowrap;
+    color:color-mix(in srgb, #fff 78%, transparent);
+    padding:11px 22px;border-radius:999px;
+    transition:background .25s ease,color .25s ease}
+  .nav-links a:hover{color:#fff;background:rgba(255,255,255,.10)}
+  .nav-links a.is-active,
+  .nav-links a.is-active:hover{background:#fff;color:var(--ink)}
+  .nav-links a.nav-cta,
+  .nav-links a.nav-cta:hover{background:var(--accent);color:var(--accent-ink)}
+
+  /* logo */
+  .logo{display:inline-flex;align-items:center;height:32px;line-height:1}
+  .logo img{height:100%;width:auto;display:block}
+
+  /* ticker */
+  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;
+    background:var(--bg)}
+  .ticker-track{display:flex;gap:48px;align-items:center;padding:14px 0;
+    white-space:nowrap;animation:tk 40s linear infinite}
+  .ticker span{font-family:var(--font-display);font-weight:600;font-size:clamp(22px,3vw,42px);
+    letter-spacing:-.02em;display:inline-flex;align-items:center;gap:48px}
+  .ticker .star{color:var(--accent);font-size:.7em;display:inline-block;transform:translateY(-.1em)}
+  @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* discipline cards */
+  .disc-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+  .disc{padding:36px 28px 28px;border-right:1px solid var(--line);position:relative;cursor:default;
+    transition:background .4s ease, color .4s ease}
+  .disc:last-child{border-right:0}
+  .disc:hover{background:var(--ink);color:var(--bg)}
+  .disc:hover .disc-num,.disc:hover .disc-meta{color:color-mix(in srgb, var(--bg) 60%, transparent)}
+  .disc:hover .disc-arrow{transform:translate(6px,-6px);color:var(--accent)}
+  .disc-num{font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-bottom:80px;
+    display:flex;justify-content:space-between;align-items:center}
+  .disc-arrow{display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1);font-size:18px}
+  .disc h3{font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.4vw,46px);text-wrap:balance;
+    letter-spacing:-.03em;line-height:.95;margin:0 0 16px}
+  .disc-meta{font-size:13px;color:var(--muted);line-height:1.45;max-width:28ch}
+
+  /* work — partizan-style flush grid */
+  .work-filter{display:flex;flex-wrap:wrap;gap:4px;padding:14px 0;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    margin-bottom:clamp(24px,3vw,40px)}
+  .work-filter-btn{display:inline-flex;align-items:center;gap:8px;
+    padding:8px 14px;border-radius:999px;cursor:pointer;
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted);
+    transition:color .25s ease, background .25s ease}
+  .work-filter-btn .dot{width:5px;height:5px;border-radius:99px;
+    background:currentColor;opacity:.4;transition:opacity .25s ease, background .25s ease}
+  .work-filter-btn:hover{color:var(--ink)}
+  .work-filter-btn:hover .dot{opacity:1}
+  .work-filter-btn.is-active{color:var(--ink)}
+  .work-filter-btn.is-active .dot{background:var(--accent);opacity:1}
+
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+    background:var(--line)}
+  /* when filtered to fewer items, keep tiles their natural 3-col width
+     instead of stretching and showing empty cells */
+  .work-grid[data-filtered="true"]{grid-template-columns:repeat(auto-fit, minmax(0, calc((100% - 4px) / 3)));
+    justify-content:start;background:transparent;gap:2px}
+  .work-grid[data-filtered="true"] .gcase{outline:1px solid var(--line);outline-offset:0}
+
+  .gcase{position:relative;display:block;background:var(--bg);overflow:hidden;cursor:default}
+  .gcase-thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+
+  /* image placeholder slot — swap inner content for real <img> when ready */
+  .gcase-img{position:absolute;inset:0;
+    background:color-mix(in srgb, var(--ink) 6%, transparent);
+    background-image:
+      repeating-linear-gradient(135deg,
+        color-mix(in srgb, var(--ink) 5%, transparent) 0 1px,
+        transparent 1px 16px);
+    display:flex;align-items:center;justify-content:center}
+  .gcase-img-label{font-family:var(--font-mono);font-size:11px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+    padding:6px 10px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r-chip)}
+  /* if you put an <img> inside .gcase-img, hide the label */
+  .gcase-img:has(img) .gcase-img-label{display:none}
+  .gcase-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* full-tile dark overlay on hover */
+  .gcase-overlay{position:absolute;inset:0;
+    background:color-mix(in srgb, var(--ink) 65%, transparent);
+    opacity:0;transition:opacity .4s ease;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:24px 26px;color:var(--bg);pointer-events:none}
+  .gcase:hover .gcase-overlay{opacity:1}
+  .gcase-overlay-bot{display:flex;flex-direction:column;gap:6px;
+    transform:translateY(8px);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+  .gcase:hover .gcase-overlay-bot{transform:translateY(0)}
+  .gcase-brand{font-family:var(--font-display);font-weight:600;
+    font-size:clamp(20px,1.8vw,28px);letter-spacing:-.02em;line-height:1.05;
+    color:var(--bg)}
+  .gcase-work{font-family:var(--font-mono);font-size:11px;
+    letter-spacing:.06em;text-transform:uppercase;
+    color:color-mix(in srgb, var(--bg) 80%, transparent)}
+
+
+  /* clients — logo marquee (creativecue-style) */
+  .clients-section{padding-bottom:clamp(60px,7vw,100px)}
+  .logo-marquee{display:flex;flex-direction:column;gap:18px;
+    margin-top:clamp(40px,5vw,72px);
+    /* fade out edges */
+    -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+            mask-image:linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%)}
+  .logo-row{overflow:hidden;width:100%;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .logo-track{display:flex;align-items:center;gap:64px;
+    white-space:nowrap;width:max-content;padding:22px 32px}
+  .logo-row--left .logo-track{animation:logo-scroll-left 60s linear infinite}
+  .logo-row--right .logo-track{animation:logo-scroll-right 75s linear infinite}
+  .logo-marquee:hover .logo-track{animation-play-state:paused}
+  @keyframes logo-scroll-left{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+  }
+  @keyframes logo-scroll-right{
+    from{transform:translateX(-50%)}
+    to{transform:translateX(0)}
+  }
+  .logo-slot{font-family:var(--font-display);font-weight:600;
+    font-size:clamp(28px,3.2vw,52px);letter-spacing:-.025em;
+    color:var(--ink);opacity:.55;
+    line-height:1;flex-shrink:0;
+    transition:opacity .3s ease}
+  .logo-slot:hover{opacity:1}
+  /* if you swap a .logo-slot for <img>, it'll size nicely */
+  .logo-slot img{height:clamp(28px,3vw,44px);width:auto;display:block;
+    filter:grayscale(1);opacity:1;transition:filter .3s ease}
+  .logo-slot:hover img{filter:grayscale(0)}
+  @media (prefers-reduced-motion: reduce){
+    .logo-track{animation:none}
+    .nav{transition:none}
+  }
+
+  /* footer */
+  .foot{background:var(--ink);color:var(--bg);padding:80px var(--pad) 40px;margin-top:120px;
+    border-radius:var(--r-lg) var(--r-lg) 0 0}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;max-width:var(--max);margin:0 auto}
+  .foot h2{font-family:var(--font-display);font-weight:600;font-size:clamp(48px,7vw,120px);
+    line-height:.9;letter-spacing:-.035em;margin:0 0 32px}
+  .foot a{display:block;padding:8px 0;font-size:14px;border-bottom:1px solid color-mix(in srgb, var(--bg) 14%, transparent)}
+  .foot a:hover{color:var(--accent)}
+  /* footer headline link — opt out of the generic .foot a styles */
+  .foot h2 a{display:inline;padding:0;font-size:inherit;font-family:inherit;
+    line-height:inherit;letter-spacing:inherit;color:inherit;border-bottom:0}
+  .foot h2 a:hover{color:var(--accent);border-bottom:0}
+  .foot h5{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:color-mix(in srgb, var(--bg) 55%, transparent);margin:0 0 14px;font-weight:500}
+  .foot-bot{max-width:var(--max);margin:60px auto 0;display:flex;justify-content:space-between;
+    border-top:1px solid color-mix(in srgb, var(--bg) 14%, transparent);padding-top:24px;
+    font-family:var(--font-mono);font-size:11px;color:color-mix(in srgb, var(--bg) 55%, transparent);
+    letter-spacing:.04em;text-transform:uppercase}
+
+  /* hero — centered editorial */
+  .hero{padding:clamp(40px,8vw,140px) 0 clamp(40px,5vw,80px);position:relative;overflow:hidden;
+    text-align:center}
+  .hero-eyebrow{display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:clamp(40px,5vw,72px)}
+  .hero h1{margin:0;display:flex;flex-direction:column;align-items:center}
+  .hero h1>div{display:block}
+  .hero-sub{max-width:48ch;margin:clamp(32px,4vw,48px) auto 0;color:var(--muted);
+    font-size:clamp(15px,1.2vw,18px);line-height:1.5}
+  .hero-cta-row{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;
+    margin-top:clamp(32px,4vw,48px)}
+  .hero-stats{display:flex;justify-content:center;gap:clamp(40px,6vw,96px);margin-top:clamp(64px,7vw,96px);
+    padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line)}
+  .hero-stat{text-align:center;display:flex;flex-direction:column;gap:6px}
+  .hero-stat .v{font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,44px);
+    letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
+  .hero-stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .h-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--line);
+    border-radius:999px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    background:var(--bg)}
+  .h-pill .swatch{width:14px;height:14px;border-radius:99px;background:var(--accent)}
+  .swirl{font-family:var(--font-serif);font-style:italic;color:var(--accent);font-weight:400}
+
+  /* section heading — centered editorial */
+  .sec-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;
+    padding:clamp(100px,11vw,180px) 0 clamp(40px,4vw,64px)}
+  .sec-head .kicker{display:flex;align-items:center;gap:10px;justify-content:center}
+  .sec-head .kicker .dot{width:7px;height:7px;border-radius:99px;background:var(--accent)}
+  .sec-head h2{margin:0 0 .35em;font-family:var(--font-display);font-weight:600;font-size:clamp(44px,6.4vw,104px);
+    letter-spacing:-.035em;line-height:1.0;padding-bottom:.05em}
+  .sec-head .right{color:var(--muted);max-width:46ch;font-size:clamp(14px,1.1vw,16.5px);line-height:1.55;
+    margin-top:18px}
+
+  /* category section */
+  .cat-list{padding:0;margin:0;list-style:none;border-top:1px solid var(--line)}
+  .cat-list li{display:flex;justify-content:space-between;align-items:center;padding:clamp(20px,2.6vw,32px) 0;
+    border-bottom:1px solid var(--line);font-family:var(--font-display);font-weight:600;
+    font-size:clamp(28px,3.8vw,56px);letter-spacing:-.03em;line-height:1;transition:padding-left .4s ease, color .3s ease}
+  .cat-list li:hover{padding-left:clamp(16px,2vw,32px);color:var(--accent)}
+  .cat-list li .num{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:var(--muted);
+    font-weight:500;margin-right:clamp(16px,2vw,28px);text-transform:uppercase}
+  .cat-list li .name{display:flex;align-items:baseline;gap:clamp(16px,2vw,28px)}
+  .cat-list li .meta{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);font-weight:500}
+
+  /* intro / about block */
+  .intro{max-width:920px;margin:0 auto;text-align:center;
+    font-family:var(--font-display);font-weight:500;
+    font-size:clamp(24px,2.8vw,40px);line-height:1.18;letter-spacing:-.02em}
+  .intro .serif{color:var(--accent)}
+
+  /* responsive */
+  @media (max-width: 1024px){
+    .disc-row{grid-template-columns:repeat(2,1fr)}
+    .disc:nth-child(2n){border-right:0}
+    .disc:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .work-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width: 640px){
+    .nav-row{grid-template-columns:1fr;justify-items:center;height:auto;gap:12px;padding-block:12px}
+    .nav-links{flex-wrap:wrap;justify-content:center;max-width:100%}
+    .nav-links a{font-size:12px;padding:9px 15px}
+    .disc-row{grid-template-columns:1fr}
+    .disc{border-right:0;border-bottom:1px solid var(--line)}
+    .foot-grid{grid-template-columns:1fr}
+    .work-grid{grid-template-columns:1fr}
+    /* stack capability title above meta text on mobile so they don't collide */
+    .cat-list li{flex-direction:column;align-items:flex-start;gap:12px}
+    .cat-list li .meta{padding-left:36px}
+    /* on mobile, show captions by default since hover doesn't exist */
+    .gcase-overlay{opacity:1;background:linear-gradient(180deg,
+      transparent 0%, transparent 35%,
+      color-mix(in srgb, var(--ink) 88%, transparent) 100%)}
+  }
+</style>
+<style>
+  /* ── mobile fixes ─────────────────────────────────────── */
+  /* never show empty "Add image" placeholders to visitors */
+  .bw-slot:not(:has(img)):not(.is-video){display:none}
+  .bw-slot{max-width:100%}
+  @media (max-width: 640px){
+    /* no live blur on phones — it re-renders whatever moves underneath */
+    .nav-links,.hero-pillbar{backdrop-filter:none;-webkit-backdrop-filter:none;
+      background:color-mix(in srgb, var(--ink) 94%, transparent)}
+    /* nav: keep all five items on one row */
+    .nav-links{flex-wrap:nowrap;gap:0;padding:4px}
+    .nav-links a{font-size:11.5px;padding:8px 9px;letter-spacing:-.015em}
+    /* brand pages: brand list becomes a swipeable row of pills so the work shows first */
+    .work-index:not(.is-landing){position:static;flex-direction:row;gap:8px;
+      overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+      margin:0 calc(var(--pad) * -1);padding:0 var(--pad) 4px}
+    .work-index:not(.is-landing)::-webkit-scrollbar{display:none}
+    .work-index:not(.is-landing) h6{display:none}
+    .work-index:not(.is-landing) a{flex:none;border:1px solid var(--line);border-radius:999px;
+      padding:8px 14px;font-size:13px;white-space:nowrap}
+    .work-index:not(.is-landing) a:last-child{border-bottom:1px solid var(--line)}
+    .work-index:not(.is-landing) a:hover{padding-left:14px}
+    .work-index:not(.is-landing) a.is-current{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+    .work-index:not(.is-landing) a.is-current .idx{color:var(--accent)}
+    /* gallery: one column, full width, nothing cropped */
+    .bw-gallery{flex-direction:column;align-items:stretch}
+    .bw-slot,.bw-slot.is-video{width:100% !important;height:auto}
+    .bw-slot img{width:auto;max-width:100%;height:auto;max-height:70vh}
+    .bw-slot:has(img){width:auto !important;align-self:center;background:none}
+    .bw-slot.is-video[style*=".5625"]{max-width:300px !important;align-self:center}
+    .work-empty{min-height:auto;padding:clamp(20px,6vw,40px) 0}
+  }
+</style>
+
+<style>
+  /* ── landing pages ─────────────────────────────── */
+  .hero-cta-row{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;
+    margin-top:clamp(32px,4vw,48px)}
+  /* static pill bar — same format as the nav pill */
+  .hero-pillbar{display:inline-flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:center;
+    background:color-mix(in srgb, var(--ink) 88%, transparent);
+    padding:6px;border-radius:999px;
+    box-shadow:0 12px 30px -14px rgba(14,14,14,.45)}
+  .hero-pillbar a{display:inline-flex;align-items:center;gap:8px;
+    font-size:14px;letter-spacing:-.01em;line-height:1;white-space:nowrap;
+    color:color-mix(in srgb, #fff 78%, transparent);
+    padding:11px 22px;border-radius:999px;
+    transition:background .25s ease,color .25s ease}
+  .hero-pillbar a:hover{color:#fff;background:rgba(255,255,255,.10)}
+  .hero-pillbar a.is-primary,
+  .hero-pillbar a.is-primary:hover{background:#fff;color:var(--ink)}
+  .hero-pillbar a.is-cta,
+  .hero-pillbar a.is-cta:hover{background:var(--accent);color:var(--accent-ink)}
+  .lp-hero{padding:clamp(40px,7vw,120px) 0 clamp(20px,3vw,40px)}
+  .lp-hero h1 .serif{font-weight:400}
+  .lp-sec{padding:clamp(56px,7vw,110px) 0 0}
+  .lp-h2{margin:0 0 clamp(18px,2vw,28px);font-family:var(--font-display);font-weight:700;
+    font-size:clamp(32px,4.4vw,64px);line-height:1;letter-spacing:-.035em;text-wrap:balance}
+  .lp-lede{max-width:62ch;margin:0 0 clamp(28px,3vw,40px);color:var(--muted);
+    font-size:clamp(15px,1.2vw,18px);line-height:1.65}
+  .lp-points{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(14px,1.6vw,22px)}
+  .lp-point{background:var(--surface);border-radius:var(--r-card);box-shadow:var(--shadow-soft);
+    padding:clamp(22px,2.4vw,30px)}
+  .lp-point .n{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:var(--accent)}
+  .lp-point h3{margin:12px 0 8px;font-family:var(--font-display);font-weight:600;
+    font-size:clamp(19px,1.6vw,23px);letter-spacing:-.02em;line-height:1.15}
+  .lp-point p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+  .lp-point a.more{display:inline-block;margin-top:14px;font-size:14px;color:var(--ink);
+    border-bottom:1px solid var(--line);transition:color .2s,border-color .2s}
+  .lp-point a.more:hover{color:var(--accent);border-color:var(--accent)}
+  .lp-work{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:clamp(14px,1.6vw,22px)}
+  .lp-card{display:block;border-radius:var(--r-card);overflow:hidden;background:var(--surface);
+    box-shadow:var(--shadow-soft);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+  .lp-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+  .lp-card img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
+  .lp-card div{padding:16px 18px 18px}
+  .lp-card b{display:block;font-family:var(--font-display);font-weight:600;font-size:18px;letter-spacing:-.015em}
+  .lp-card span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .lp-steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .lp-steps li{display:grid;grid-template-columns:70px 1fr;gap:16px;padding:clamp(18px,2vw,26px) 0;
+    border-bottom:1px solid var(--line)}
+  .lp-steps .n{font-family:var(--font-mono);font-size:12px;color:var(--muted);padding-top:6px}
+  .lp-steps h3{margin:0 0 6px;font-family:var(--font-display);font-weight:600;font-size:clamp(20px,2vw,28px);letter-spacing:-.025em}
+  .lp-steps p{margin:0;color:var(--muted);line-height:1.6;max-width:62ch}
+  .lp-faq{border-top:1px solid var(--line)}
+  .lp-faq details{border-bottom:1px solid var(--line)}
+  .lp-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;
+    align-items:center;padding:clamp(18px,2vw,24px) 0;font-family:var(--font-display);font-weight:600;
+    font-size:clamp(17px,1.5vw,21px);letter-spacing:-.015em}
+  .lp-faq summary::-webkit-details-marker{display:none}
+  .lp-faq summary::after{content:"+";font-family:var(--font-mono);font-weight:400;font-size:20px;color:var(--muted);
+    transition:transform .3s}
+  .lp-faq details[open] summary::after{transform:rotate(45deg);color:var(--accent)}
+  .lp-faq details p{margin:0 0 clamp(18px,2vw,24px);max-width:66ch;color:var(--muted);line-height:1.65}
+  .lp-faq a,.lp-lede a,.lp-point p a{color:var(--ink);border-bottom:1px solid var(--line)}
+  .lp-cta{padding:clamp(80px,9vw,140px) 0 clamp(80px,10vw,140px);text-align:center}
+  .lp-cta .hero-cta-row{margin-top:clamp(24px,3vw,36px)}
+  @media (max-width: 640px){
+    .lp-steps li{grid-template-columns:44px 1fr}
+    .hero-pillbar a{font-size:12px;padding:9px 15px}
+  }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "CPG graphic design", "serviceType": "CPG graphic design", "url": "https://nutramedia.co/cpg-graphic-design.html", "description": "NutraMedia is a CPG graphic design agency for supplement, food and beverage brands: brand identity, packaging design, 3D renders and Amazon content, all in-house.", "provider": {"@id": "https://nutramedia.co/#org"}, "areaServed": "US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a CPG graphic design agency do?", "acceptedAnswer": {"@type": "Answer", "text": "A CPG graphic design agency creates the brand and packaging for consumer packaged goods: the identity, the packaging system across every SKU, product renders and the content that sells the product online. NutraMedia does all of this in-house for supplement, food and beverage brands."}}, {"@type": "Question", "name": "How long does a CPG packaging project take?", "acceptedAnswer": {"@type": "Answer", "text": "Most projects take about 10–14 weeks from brief to press-ready files, within a three- to four-month engagement. Timing depends on the number of SKUs and whether you need a new identity or a packaging refresh."}}, {"@type": "Question", "name": "How much does CPG packaging design cost?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on scope: how many SKUs and flavors, whether the brand identity is new or existing, and whether you need renders, photography or Amazon content. Tell us what you're launching and we'll scope it."}}, {"@type": "Question", "name": "Do you only work with supplement brands?", "acceptedAnswer": {"@type": "Answer", "text": "No. We design for supplements and nutraceuticals, beverages like energy and hydration drinks and coffee alternatives, and food and snack brands."}}, {"@type": "Question", "name": "Do you design Amazon listing and A+ content?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We design listing images and A+ content, including for the entire Lemme line."}}, {"@type": "Question", "name": "Do you work with brands outside the US?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We helped Applied Nutrition, one of the UK's biggest sports nutrition brands, launch in the US."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nutramedia.co/"}, {"@type": "ListItem", "position": 2, "name": "What we do", "item": "https://nutramedia.co/what-we-do.html"}, {"@type": "ListItem", "position": 3, "name": "CPG graphic design", "item": "https://nutramedia.co/cpg-graphic-design.html"}]}, {"@type": "ProfessionalService", "@id": "https://nutramedia.co/#org", "name": "NutraMedia", "url": "https://nutramedia.co/", "logo": "https://nutramedia.co/logos/nutramedialogo.svg", "image": "https://nutramedia.co/social-card.png", "description": "Independent CPG graphic design and packaging agency for supplement, food and beverage brands.", "alternateName": "NutraMedia Studios", "email": "tk@nutramedia.co", "foundingDate": "2020", "address": {"@type": "PostalAddress", "streetAddress": "12335 FM 1097, Ste 101", "addressLocality": "Willis", "addressRegion": "TX", "postalCode": "77318", "addressCountry": "US"}, "areaServed": "US", "knowsAbout": ["CPG graphic design", "Packaging design", "Brand identity", "Supplement packaging", "Beverage packaging", "3D product rendering", "Amazon A+ content"], "sameAs": ["https://www.instagram.com/nutramedia", "https://www.linkedin.com/company/nutramedia%E2%84%A2/"]}]}</script>
+</head>
+<body>
+
+<!-- ─── Nav ─────────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="wrap nav-row">
+    <a href="index.html" class="logo" aria-label="NutraMedia — home"><img src="logos/nutramedialogo.svg" alt="NutraMedia" /></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="what-we-do.html" class="is-active">What we do</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener" class="nav-cta cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── Hero ────────────────────────────────────────────────── -->
+<section class="hero wrap lp-hero">
+  <h1 class="display display-l">CPG graphic design, <span class="serif">built for the shelf.</span></h1>
+  <p class="hero-sub">We're a CPG graphic design agency for supplement, food and beverage brands. Identity, packaging, renders and Amazon content — one team, from brief to print-ready files.</p>
+  <div class="hero-cta-row">
+    <div class="hero-pillbar">
+      <a href="work.html" class="is-primary">See our work →</a>
+      <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener" class="is-cta">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="lp-sec">
+    <h2 class="lp-h2">What CPG graphic design <span class="serif">covers.</span></h2>
+    <p class="lp-lede">CPG graphic design is everything a consumer packaged goods brand needs to look right wherever it's sold — on shelf, in a cooler, in an Amazon search and in a sell-in deck. We handle all of it in-house.</p>
+    <div class="lp-points">
+      <div class="lp-point"><span class="n">01</span><h3>Brand identity &amp; strategy</h3><p>Naming, positioning, logo and the visual system the whole range is built on.</p></div>
+      <div class="lp-point"><span class="n">02</span><h3>Packaging design</h3><p>From first concept to production-ready artwork across every SKU, flavor and format.</p></div>
+      <div class="lp-point"><span class="n">03</span><h3>Product visualization</h3><p>3D photo and video renders and mockups for sell-in, ecommerce and launch.</p></div>
+      <div class="lp-point"><span class="n">04</span><h3>Photography &amp; video</h3><p>Product, lifestyle and on-shelf content that matches the packaging.</p></div>
+      <div class="lp-point"><span class="n">05</span><h3>Amazon &amp; channel content</h3><p>Listing images and A+ content that make benefits easy to scan and the product easy to buy.</p></div>
+    </div>
+  </section>
+  <section class="lp-sec">
+    <h2 class="lp-h2">Who we <span class="serif">design for.</span></h2>
+    <p class="lp-lede">We work with CPG brands from two-person founders to category leaders, with deep experience in three categories.</p>
+    <div class="lp-points">
+      <div class="lp-point"><span class="n">01</span><h3>Supplements &amp; nutraceuticals</h3><p>Pre-workouts, protein, creatine, gummies and wellness lines.</p>
+        <a class="more" href="supplement-packaging-design.html">Supplement packaging →</a></div>
+      <div class="lp-point"><span class="n">02</span><h3>Beverages</h3><p>Energy and hydration drinks, RTDs and coffee alternatives.</p>
+        <a class="more" href="beverage-packaging-design.html">Beverage packaging →</a></div>
+      <div class="lp-point"><span class="n">03</span><h3>Food &amp; snacks</h3><p>Functional food and better-for-you snacks, like <a href="work-redefine-foods.html">Redefine Foods</a>' protein pies.</p></div>
+    </div>
+  </section>
+  <section class="lp-sec">
+    <h2 class="lp-h2">Selected CPG <span class="serif">work.</span></h2>
+    <p class="lp-lede">A few of the brands we've designed for. Each one shipped.</p>
+    <div class="lp-work">
+      <a class="lp-card" href="work-kreo.html"><img src="Images/Kreo.jpg" alt="Kreo packaging by NutraMedia" loading="lazy"><div><b>Kreo</b><span>Packaging · Identity</span></div></a>
+      <a class="lp-card" href="work-applied-nutrition-abe.html"><img src="Images/ANABE.jpeg" alt="Applied Nutrition packaging by NutraMedia" loading="lazy"><div><b>Applied Nutrition</b><span>Packaging · Identity</span></div></a>
+      <a class="lp-card" href="work-jocko-fuel.html"><img src="Images/JockoFuelEnergy.png" alt="Jocko Fuel packaging by NutraMedia" loading="lazy"><div><b>Jocko Fuel</b><span>Packaging</span></div></a>
+      <a class="lp-card" href="work-redefine-foods.html"><img src="Images/RedefineFoods.jpg" alt="Redefine Foods packaging by NutraMedia" loading="lazy"><div><b>Redefine Foods</b><span>Rebranding · Packaging Redesign</span></div></a>
+      <a class="lp-card" href="work-lemme.html"><img src="Images/Lemme.jpeg" alt="Lemme packaging by NutraMedia" loading="lazy"><div><b>Lemme</b><span>Amazon Content</span></div></a>
+      <a class="lp-card" href="work-fig-brew.html"><img src="Images/FigBrew.jpg" alt="Fig Brew packaging by NutraMedia" loading="lazy"><div><b>Fig Brew</b><span>Brand Identity · Rebranding · Packaging</span></div></a>
+    </div>
+  </section>
+  <section class="lp-sec">
+    <h2 class="lp-h2">How we <span class="serif">work.</span></h2>
+    <p class="lp-lede">One senior team from start to finish. Most engagements run three to four months, with brief to press-ready files in about 10–14 weeks.</p>
+    <ol class="lp-steps">
+      <li><span class="n">01</span><div><h3>Brief &amp; strategy</h3><p>We start with the product, the shopper and the shelf: who you're competing with, what has to read first, and where the brand needs to go.</p></div></li>
+      <li><span class="n">02</span><div><h3>Concepts</h3><p>Distinct design directions, shown on real packaging formats — not just flat logos — so you can judge them the way a shopper will.</p></div></li>
+      <li><span class="n">03</span><div><h3>Refine &amp; visualize</h3><p>We develop one direction across every SKU and flavor, with 3D renders and mockups you can use for sell-in decks, ecommerce and launch.</p></div></li>
+      <li><span class="n">04</span><div><h3>Production-ready files</h3><p>Print-ready artwork for your printer and co-packer, plus the assets you need online, from Amazon listings to social.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ─── FAQ ─────────────────────────────────────────────────── -->
+  <section class="lp-sec">
+    <h2 class="lp-h2">Questions, <span class="serif">answered.</span></h2>
+    <div class="lp-faq">
+    <details>
+      <summary>What does a CPG graphic design agency do?</summary>
+      <p>A CPG graphic design agency creates the brand and packaging for consumer packaged goods: the identity, the packaging system across every SKU, product renders and the content that sells the product online. NutraMedia does all of this in-house for supplement, food and beverage brands.</p>
+    </details>
+    <details>
+      <summary>How long does a CPG packaging project take?</summary>
+      <p>Most projects take about 10–14 weeks from brief to press-ready files, within a three- to four-month engagement. Timing depends on the number of SKUs and whether you need a new identity or a packaging refresh.</p>
+    </details>
+    <details>
+      <summary>How much does CPG packaging design cost?</summary>
+      <p>It depends on scope: how many SKUs and flavors, whether the brand identity is new or existing, and whether you need renders, photography or Amazon content. <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener">Tell us what you're launching</a> and we'll scope it.</p>
+    </details>
+    <details>
+      <summary>Do you only work with supplement brands?</summary>
+      <p>No. We design for supplements and nutraceuticals, beverages like energy and hydration drinks and coffee alternatives, and food and snack brands.</p>
+    </details>
+    <details>
+      <summary>Do you design Amazon listing and A+ content?</summary>
+      <p>Yes. We design listing images and A+ content, including for the entire <a href="work-lemme.html">Lemme</a> line.</p>
+    </details>
+    <details>
+      <summary>Do you work with brands outside the US?</summary>
+      <p>Yes. We helped <a href="work-applied-nutrition-abe.html">Applied Nutrition</a>, one of the UK's biggest sports nutrition brands, launch in the US.</p>
+    </details>
+    </div>
+  </section>
+</main>
+
+<!-- ─── Closing CTA ─────────────────────────────────────────── -->
+<section class="wrap lp-cta">
+  <p class="mono" style="color:var(--muted);margin:0 0 20px">Launching something?</p>
+  <h2 class="display display-m" style="margin:0">Let's put it <span class="serif">on the shelf.</span></h2>
+  <div class="hero-cta-row">
+    <div class="hero-pillbar">
+      <a href="what-we-do.html" class="is-primary">What we do →</a>
+      <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener" class="is-cta">Start a project</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ──────────────────────────────────────────────── -->
+<footer class="foot" id="contact">
+  <div style="max-width: var(--max); margin: 0 auto">
+    <h2 class="display">
+      Got a launch <span class="serif" style="color: var(--accent)">worth</span><br>
+      designing? <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener" class="serif">Get in touch ↗</a>
+    </h2>
+  </div>
+
+  <div class="foot-grid">
+    <div>
+      <h5>New business</h5>
+      <a href="mailto:tk@nutramedia.co">tk@nutramedia.co</a>
+      <div style="margin-top: 24px; font-size: 13px; opacity: .65; line-height: 1.55">
+        We reply to every inquiry within 48 hours.<br>
+        <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;color:var(--accent);border-bottom:none">Start a project ↗</a>
+      </div>
+      <address style="margin-top: 24px; font-size: 12px; opacity: .55; line-height: 1.55; font-style: normal; font-family: var(--font-mono); letter-spacing: .04em">
+        12335 FM 1097, Ste 101<br>
+        Willis, Texas 77318
+      </address>
+    </div>
+    <div>
+      <h5>Expertise</h5>
+      <a href="cpg-graphic-design.html">CPG graphic design</a>
+      <a href="supplement-packaging-design.html">Supplement packaging</a>
+      <a href="beverage-packaging-design.html">Beverage packaging</a>
+    </div>
+    <div>
+      <h5>Elsewhere</h5>
+      <a href="https://www.instagram.com/nutramedia" target="_blank" rel="noopener">Instagram ↗</a>
+      <a href="https://www.linkedin.com/company/nutramedia%E2%84%A2/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+
+  <div class="foot-bot">
+    <span>© NutraMedia — Est. 2020</span>
+  </div>
+</footer>
+
+<script>
+  // ─── Work filter ────────────────────────────────────────────
+  (function() {
+    var filter = document.getElementById('work-filter');
+    var grid = document.getElementById('work-grid');
+    if (!filter || !grid) return;
+    var cases = grid.querySelectorAll('.gcase');
+
+    filter.addEventListener('click', function(e) {
+      var btn = e.target.closest('.work-filter-btn');
+      if (!btn) return;
+      var cat = btn.getAttribute('data-filter');
+
+      // toggle active state
+      filter.querySelectorAll('.work-filter-btn').forEach(function(b) {
+        var active = b === btn;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+
+      // filter cases
+      cases.forEach(function(c) {
+        var match = (cat === 'All') || (c.getAttribute('data-cat') === cat);
+        c.style.display = match ? '' : 'none';
+      });
+
+      // toggle grid layout: rigid 3-col when 'All', collapse otherwise
+      grid.setAttribute('data-filtered', cat === 'All' ? 'false' : 'true');
+    });
+  })();
+
+
+  /* hide nav on scroll down, reveal on scroll up (always show near top) */
+  (function(){
+    var nav = document.querySelector(".nav");
+    if(!nav) return;
+    var lastY = window.pageYOffset || 0, ticking = false;
+    function update(){
+      var y = window.pageYOffset || 0;
+      if (y < 80) nav.classList.remove("nav--hidden");
+      else if (y > lastY + 6) nav.classList.add("nav--hidden");
+      else if (y < lastY - 6) nav.classList.remove("nav--hidden");
+      lastY = y; ticking = false;
+    }
+    window.addEventListener("scroll", function(){
+      if(!ticking){ window.requestAnimationFrame(update); ticking = true; }
+    }, {passive:true});
+  })();
+</script>
+
+</body>
+</html>
