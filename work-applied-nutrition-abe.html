@@ -444,6 +444,9 @@
   .bw-slot:not(:has(img)):not(.is-video){display:none}
   .bw-slot{max-width:100%}
   @media (max-width: 640px){
+    /* no live blur on phones — it re-renders whatever moves underneath */
+    .nav-links,.hero-pillbar{backdrop-filter:none;-webkit-backdrop-filter:none;
+      background:color-mix(in srgb, var(--ink) 94%, transparent)}
     /* nav: keep all five items on one row */
     .nav-links{flex-wrap:nowrap;gap:0;padding:4px}
     .nav-links a{font-size:11.5px;padding:8px 9px;letter-spacing:-.015em}
@@ -512,7 +515,6 @@
       <div><dt>Client</dt><dd>Applied Nutrition ABE</dd></div>
       <div><dt>Scope</dt><dd>Packaging · Identity</dd></div>
       <div><dt>Category</dt><dd>Energy</dd></div>
-      <div><dt>Year</dt><dd>20XX</dd></div>
     </dl>
 
     <figure class="bw-shot">
