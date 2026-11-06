@@ -341,7 +341,27 @@
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://nutramedia.co/#org", "name": "NutraMedia", "url": "https://nutramedia.co/", "logo": "https://nutramedia.co/logos/nutramedialogo.svg", "image": "https://nutramedia.co/social-card.png", "description": "Independent CPG graphic design and packaging agency for supplement, food and beverage brands.", "alternateName": "NutraMedia Studios", "email": "tk@nutramedia.co", "foundingDate": "2020", "address": {"@type": "PostalAddress", "streetAddress": "12335 FM 1097, Ste 101", "addressLocality": "Willis", "addressRegion": "TX", "postalCode": "77318", "addressCountry": "US"}, "areaServed": "US", "knowsAbout": ["CPG graphic design", "Packaging design", "Brand identity", "Supplement packaging", "Beverage packaging", "3D product rendering", "Amazon A+ content"], "sameAs": ["https://www.instagram.com/nutramedia", "https://www.linkedin.com/company/nutramedia%E2%84%A2/"]}]}</script>
-<style>.wwd-spec{max-width:60ch;margin:0 auto;text-align:center;color:var(--muted);font-size:clamp(15px,1.2vw,18px);line-height:1.6}.wwd-spec a{color:var(--ink);border-bottom:1px solid var(--line);transition:color .2s,border-color .2s}.wwd-spec a:hover{color:var(--accent);border-color:var(--accent)}</style>
+<style>
+  .wwd-spec{padding-top:clamp(20px,3vw,40px);padding-bottom:clamp(20px,3vw,40px)}
+  .wwd-spec-h{margin:0 0 clamp(20px,2.4vw,32px);font-family:var(--font-display);font-weight:700;
+    font-size:clamp(28px,3.6vw,52px);line-height:1;letter-spacing:-.035em}
+  .wwd-spec-h .serif{font-weight:400}
+  .wwd-spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px)}
+  .wwd-card{display:flex;flex-direction:column;background:var(--surface);border-radius:var(--r-card);
+    box-shadow:var(--shadow-soft);padding:clamp(22px,2.4vw,32px);
+    transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s cubic-bezier(.2,.7,.2,1)}
+  .wwd-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+  .wwd-card .n{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:var(--accent)}
+  .wwd-card h3{margin:14px 0 8px;font-family:var(--font-display);font-weight:600;
+    font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;line-height:1.1}
+  .wwd-card p{margin:0 0 22px;color:var(--muted);font-size:15px;line-height:1.6}
+  .wwd-card .go{margin-top:auto;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink)}
+  .wwd-card .go b{display:inline-block;transition:transform .3s}
+  .wwd-card:hover .go{color:var(--accent)}
+  .wwd-card:hover .go b{transform:translateX(4px)}
+  @media (max-width: 900px){ .wwd-spec-grid{grid-template-columns:1fr} }
+</style>
 </head>
 <body>
 
@@ -413,8 +433,28 @@
 </section>
 
 <!-- ─── Specialties ─────────────────────────────────────────── -->
-<section class="wrap" style="padding-bottom:clamp(20px,3vw,40px)">
-  <p class="wwd-spec">Specialists in <a href="cpg-graphic-design.html">CPG graphic design</a>, with deep experience in <a href="supplement-packaging-design.html">supplement packaging</a> and <a href="beverage-packaging-design.html">beverage packaging</a>.</p>
+<section class="wrap wwd-spec">
+  <h2 class="wwd-spec-h">Where we go <span class="serif">deep.</span></h2>
+  <div class="wwd-spec-grid">
+    <a class="wwd-card" href="cpg-graphic-design.html">
+      <span class="n">01</span>
+      <h3>CPG graphic design</h3>
+      <p>Identity, packaging, renders and Amazon content for consumer packaged goods brands.</p>
+      <span class="go">Explore <b>→</b></span>
+    </a>
+    <a class="wwd-card" href="supplement-packaging-design.html">
+      <span class="n">02</span>
+      <h3>Supplement packaging</h3>
+      <p>Tubs, pouches, stick packs and gummies for supplement and sports nutrition brands.</p>
+      <span class="go">Explore <b>→</b></span>
+    </a>
+    <a class="wwd-card" href="beverage-packaging-design.html">
+      <span class="n">03</span>
+      <h3>Beverage packaging</h3>
+      <p>Cans and pouches for energy, hydration, RTDs and coffee alternatives.</p>
+      <span class="go">Explore <b>→</b></span>
+    </a>
+  </div>
 </section>
 
 <!-- ─── Closing CTA ─────────────────────────────────────────── -->
