@@ -444,6 +444,9 @@
   .bw-slot:not(:has(img)):not(.is-video){display:none}
   .bw-slot{max-width:100%}
   @media (max-width: 640px){
+    /* no live blur on phones — it re-renders whatever moves underneath */
+    .nav-links,.hero-pillbar{backdrop-filter:none;-webkit-backdrop-filter:none;
+      background:color-mix(in srgb, var(--ink) 94%, transparent)}
     /* nav: keep all five items on one row */
     .nav-links{flex-wrap:nowrap;gap:0;padding:4px}
     .nav-links a{font-size:11.5px;padding:8px 9px;letter-spacing:-.015em}
@@ -505,14 +508,13 @@
   <main>
     <header class="bw-hero">
       <h1 class="display display-l">Jocko Fuel <span class="serif">Brand Work</span></h1>
-      <p class="bw-lead">Packaging for a brand built on discipline — a system that had to read as fast on a crowded energy shelf as it does in a gym bag.</p>
+      <p class="bw-lead">Packaging for Jocko Fuel’s energy drinks, hydration drinks and the Jocko Pro series — three lines that had to stand apart on shelf and still read as one brand.</p>
     </header>
 
     <dl class="bw-meta">
       <div><dt>Client</dt><dd>Jocko Fuel</dd></div>
       <div><dt>Scope</dt><dd>Packaging</dd></div>
-      <div><dt>Category</dt><dd>Energy</dd></div>
-      <div><dt>Year</dt><dd>2024</dd></div>
+      <div><dt>Category</dt><dd>Energy · Hydration</dd></div>
     </dl>
 
     <figure class="bw-shot">
@@ -522,12 +524,12 @@
     <div class="bw-body">
       <section class="bw-block">
         <h2>The brief</h2>
-        <p>Jocko Fuel came to us needing packaging that carried the brand's discipline-first ethos onto shelf without shouting. The category is loud: chrome, neon, aggressive type. The brief was to stand out by doing less.</p>
+        <p>Jocko Fuel needed packaging that could carry one brand across three product lines — energy drinks, hydration drinks and the Jocko Pro series — without the lines blurring together on a crowded shelf.</p>
       </section>
 
       <section class="bw-block">
         <h2>What we did</h2>
-        <p>We built a packaging system around a strict hierarchy — flavor, function, then everything else — so a single can reads in under a second at three feet. Type and color do the work; the layout stays disciplined across every SKU and scales cleanly as the line expands.</p>
+        <p>We designed packaging across all three lines. Each range has its own look so shoppers can tell energy, hydration and Pro apart at a glance, while a shared system of type, color and layout keeps every can unmistakably Jocko Fuel.</p>
       </section>
     </div>
 
