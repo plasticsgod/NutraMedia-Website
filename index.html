@@ -189,7 +189,6 @@
     white-space:nowrap;width:max-content;padding:22px 32px}
   .logo-row--left .logo-track{animation:logo-scroll-left 40s linear infinite}
   .logo-row--right .logo-track{animation:logo-scroll-right 50s linear infinite}
-  .logo-marquee:hover .logo-track{animation-play-state:paused}
   @keyframes logo-scroll-left{
     from{transform:translateX(0)}
     to{transform:translateX(-33.3333%)}
@@ -203,7 +202,7 @@
     color:var(--ink);opacity:.55;
     line-height:1;flex-shrink:0;
     transition:opacity .3s ease}
-  .logo-slot:hover{opacity:1}
+  /* no hover highlight */
   /* logo images: flattened to a single ink color regardless of source format/color.
      50% opacity default, full ink on hover. Works on PNG, JPG, SVG, full-color or mono. */
   .logo-slot img{height:clamp(28px,3vw,44px);width:auto;display:block;
@@ -218,7 +217,6 @@
   .logo-slot img[src*="FigBrew"]{height:clamp(48px,5vw,72px)}
   /* when an img is inside .logo-slot, override the span's own opacity transition */
   .logo-slot:has(img){opacity:1}
-  .logo-slot:hover img{opacity:1}
   @media (prefers-reduced-motion: reduce){
     .logo-track{animation:none}
     .nav{transition:none}
@@ -398,9 +396,13 @@
   /* recolor the whole strip once instead of filtering 60 images every frame */
   .logo-slot img{filter:none}
   .logo-track{filter:brightness(0)}
-  /* only pause on real hover (mouse), never on a phone tap/scroll */
-  .logo-marquee:hover .logo-track{animation-play-state:running}
-  @media (hover:hover) and (pointer:fine){ .logo-marquee:hover .logo-track{animation-play-state:paused} }
+  /* never pause or highlight on hover/tap — the strip always runs, every logo stays the same tone */
+  .logo-marquee:hover .logo-track,.logo-marquee:active .logo-track{animation-play-state:running}
+  .logo-slot,.logo-slot img{transition:none}
+  .logo-slot:hover,.logo-slot:active{opacity:.55}
+  .logo-slot:has(img),.logo-slot:has(img):hover{opacity:1}
+  .logo-slot:hover img,.logo-slot:active img{opacity:.5}
+  .logo-marquee{-webkit-tap-highlight-color:transparent}
   @media (max-width: 640px){
     .logo-marquee{--mq-gap:36px;-webkit-mask-image:none;mask-image:none}
     .logo-track{padding-left:0;padding-right:0}
