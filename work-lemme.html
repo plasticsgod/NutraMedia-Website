@@ -385,6 +385,10 @@
   .bw-block p{margin:0;max-width:62ch;font-size:clamp(15px,1.15vw,17px);
     line-height:1.65;color:var(--muted)}
 
+  .bw-block p+p{margin-top:14px}
+  .bw-list{margin:0;padding:0;list-style:none;display:grid;gap:10px;max-width:62ch}
+  .bw-list li{position:relative;padding-left:22px;font-size:clamp(15px,1.15vw,17px);line-height:1.5;color:var(--ink)}
+  .bw-list li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
   /* gallery — drop more <img> in as artwork is ready */
   /* gallery — fixed-height filmstrip: every item shares one height, no crop */
   .bw-gallery{margin:clamp(46px,5vw,76px) 0 0;display:flex;flex-wrap:wrap;
@@ -530,12 +534,23 @@
     <div class="bw-body">
       <section class="bw-block">
         <h2>The brief</h2>
-        <p>Lemme needed Amazon imagery across its whole line that explains what each product does in seconds on a crowded search page, while keeping the brand’s bright, playful look consistent from listing to listing.</p>
+        <p>Lemme sells a full line of supplements on Amazon, where shoppers decide in seconds from a grid of thumbnails and a few swipes of images.</p>
+        <p>Lemme needed listing and A+ content across the entire line that explains what each product does almost instantly — while keeping the brand’s bright, playful personality consistent from one product to the next.</p>
       </section>
-
       <section class="bw-block">
-        <h2>What we did</h2>
-        <p>We designed Amazon listing and A+ content for the entire Lemme line, from Lemme Purr to the rest of the range: clear benefit callouts, bold product shots and brand lines like “wellness should be delicious,” laid out so shoppers get the key information without reading the fine print.</p>
+        <h2>Our approach</h2>
+        <p>We built one content system for the whole line and applied it product by product. Each listing leads with a bold product shot, then moves through short benefit callouts so the key information comes through without reading the fine print.</p>
+        <p>Brand lines like “wellness should be delicious” and Lemme’s color palette carry from listing to listing, so a shopper who discovers one product recognizes the rest of the range immediately.</p>
+      </section>
+      <section class="bw-block">
+        <h2>What we delivered</h2>
+        <ul class="bw-list">
+          <li>Amazon listing image sets for the entire Lemme line</li><li>A+ content modules</li><li>Benefit callout system</li><li>Consistent layout templates across products</li>
+        </ul>
+      </section>
+      <section class="bw-block">
+        <h2>Why it works</h2>
+        <p>On Amazon, the images are the packaging. A clear, repeatable system makes every product easy to understand at a glance and turns the whole line into one recognizable brand on the search page.</p>
       </section>
     </div>
 

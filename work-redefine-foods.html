@@ -385,6 +385,10 @@
   .bw-block p{margin:0;max-width:62ch;font-size:clamp(15px,1.15vw,17px);
     line-height:1.65;color:var(--muted)}
 
+  .bw-block p+p{margin-top:14px}
+  .bw-list{margin:0;padding:0;list-style:none;display:grid;gap:10px;max-width:62ch}
+  .bw-list li{position:relative;padding-left:22px;font-size:clamp(15px,1.15vw,17px);line-height:1.5;color:var(--ink)}
+  .bw-list li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
   /* gallery — drop more <img> in as artwork is ready */
   /* gallery — fixed-height filmstrip: every item shares one height, no crop */
   .bw-gallery{margin:clamp(46px,5vw,76px) 0 0;display:flex;flex-wrap:wrap;
@@ -530,12 +534,23 @@
     <div class="bw-body">
       <section class="bw-block">
         <h2>The brief</h2>
-        <p>Redefine Foods wanted a new brand, not a refresh: protein pies that look like a treat first and a protein snack second, with a system that could carry flavors like the Skippy collaboration and work across single wraps and retail display boxes.</p>
+        <p>Redefine Foods wanted a new brand, not a refresh. Its Oatmeal Protein Pies needed to look like a treat first and a protein snack second — something people pick up because it looks delicious, then feel good about.</p>
+        <p>The new system also had to carry co-branded flavors like Skippy and work across everything from a single wrapper to retail display boxes.</p>
       </section>
-
       <section class="bw-block">
-        <h2>What we did</h2>
-        <p>We rebranded Redefine Foods and fully redesigned the packaging around a bold, flavor-coded color system — red for Original, blue for the Skippy line — hero product photography and the 15g protein claim kept front and center. The system runs from the single wrapper to display boxes and retail promotions like GNC’s.</p>
+        <h2>Our approach</h2>
+        <p>We rebuilt the brand and redesigned the packaging around appetite: hero product photography, a bold flavor-coded color system — red for Original, blue for the Skippy line — and the 15g protein claim kept front and center so the nutrition story is never lost.</p>
+        <p>We designed the wrapper and the display box together, so a single pie and a full box on a counter tell the same story. The system stretched naturally into retail promotions, including GNC’s.</p>
+      </section>
+      <section class="bw-block">
+        <h2>What we delivered</h2>
+        <ul class="bw-list">
+          <li>Full brand redesign</li><li>Oatmeal Protein Pie wrapper packaging</li><li>Co-branded Skippy flavor packaging</li><li>Retail display boxes</li><li>Retail promotion assets</li>
+        </ul>
+      </section>
+      <section class="bw-block">
+        <h2>Why it works</h2>
+        <p>Protein snacks win when they look like something you’d want to eat anyway. Leading with the product and coding every flavor by color makes Redefine easy to want — and easy to find again.</p>
       </section>
     </div>
 

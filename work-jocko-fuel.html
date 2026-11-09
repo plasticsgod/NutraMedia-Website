@@ -385,6 +385,10 @@
   .bw-block p{margin:0;max-width:62ch;font-size:clamp(15px,1.15vw,17px);
     line-height:1.65;color:var(--muted)}
 
+  .bw-block p+p{margin-top:14px}
+  .bw-list{margin:0;padding:0;list-style:none;display:grid;gap:10px;max-width:62ch}
+  .bw-list li{position:relative;padding-left:22px;font-size:clamp(15px,1.15vw,17px);line-height:1.5;color:var(--ink)}
+  .bw-list li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
   /* gallery — drop more <img> in as artwork is ready */
   /* gallery — fixed-height filmstrip: every item shares one height, no crop */
   .bw-gallery{margin:clamp(46px,5vw,76px) 0 0;display:flex;flex-wrap:wrap;
@@ -530,12 +534,23 @@
     <div class="bw-body">
       <section class="bw-block">
         <h2>The brief</h2>
-        <p>Jocko Fuel needed packaging that could carry one brand across three product lines — energy drinks, hydration drinks and the Jocko Pro series — without the lines blurring together on a crowded shelf.</p>
+        <p>Jocko Fuel’s range had grown into three lines — energy drinks, hydration drinks and the Jocko Pro series — each with its own job and its own customer.</p>
+        <p>The challenge was to let each line stand on its own so shoppers can find what they need fast, while every pack still reads as Jocko Fuel at a glance.</p>
       </section>
-
       <section class="bw-block">
-        <h2>What we did</h2>
-        <p>We designed packaging across all three lines. Each range has its own look so shoppers can tell energy, hydration and Pro apart at a glance, while a shared system of type, color and layout keeps every can unmistakably Jocko Fuel.</p>
+        <h2>Our approach</h2>
+        <p>We built a shared backbone — type, layout and brand mark in consistent positions — and then gave each line its own look on top of it. Energy, hydration and Pro each get a distinct visual signal so they separate instantly on shelf and in a lineup.</p>
+        <p>Because the backbone never moves, adding a new flavor or format slots straight into the system instead of starting from scratch.</p>
+      </section>
+      <section class="bw-block">
+        <h2>What we delivered</h2>
+        <ul class="bw-list">
+          <li>Energy drink packaging</li><li>Hydration drink packaging</li><li>Jocko Pro series packaging</li><li>Cross-line packaging system</li><li>Product imagery and motion</li>
+        </ul>
+      </section>
+      <section class="bw-block">
+        <h2>Why it works</h2>
+        <p>A strong brand with several product lines can easily start to look like several brands. A fixed system with clear line signals keeps the range coherent as it grows — and makes it easy for customers to find their product again.</p>
       </section>
     </div>
 
