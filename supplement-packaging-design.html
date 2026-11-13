@@ -401,6 +401,45 @@
   .lp-faq details[open] summary::after{transform:rotate(45deg);color:var(--accent)}
   .lp-faq details p{margin:0 0 clamp(18px,2vw,24px);max-width:66ch;color:var(--muted);line-height:1.65}
   .lp-faq a,.lp-lede a,.lp-point p a{color:var(--ink);border-bottom:1px solid var(--line)}
+
+  /* ── v2 additions ── */
+  mark.ph{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--ink);padding:0 .25em;border-radius:6px}
+  .lp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px);padding:clamp(40px,5vw,72px) 0 0}
+  .lp-stat{border-top:1px solid var(--line);padding-top:16px}
+  .lp-stat b{display:block;font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.2vw,46px);letter-spacing:-.035em;line-height:1}
+  .lp-stat span{display:block;margin-top:10px;color:var(--muted);font-size:14px;line-height:1.45}
+  .lp-formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(12px,1.4vw,18px)}
+  .lp-format{display:block;background:var(--surface);border-radius:var(--r-card);box-shadow:var(--shadow-soft);padding:clamp(18px,2vw,24px);transition:transform .25s,box-shadow .25s}
+  a.lp-format:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+  .lp-format h3{margin:0 0 6px;font-family:var(--font-display);font-weight:600;font-size:19px;letter-spacing:-.02em}
+  .lp-format p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.55}
+  .lp-format .go{display:inline-block;margin-top:12px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .lp-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px)}
+  .lp-panel{border-radius:var(--r-lg);padding:clamp(24px,3vw,40px);background:var(--surface);box-shadow:var(--shadow-soft)}
+  .lp-panel.dark{background:var(--ink);color:var(--bg)}
+  .lp-panel.dark p,.lp-panel.dark li{color:color-mix(in srgb,var(--bg) 72%,transparent)}
+  .lp-panel h3{margin:0 0 10px;font-family:var(--font-display);font-weight:700;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.03em}
+  .lp-panel p{margin:0 0 14px;color:var(--muted);line-height:1.6}
+  .lp-panel ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+  .lp-panel li{position:relative;padding-left:20px;line-height:1.5;color:var(--muted)}
+  .lp-panel li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .lp-price{font-family:var(--font-display);font-weight:700;font-size:clamp(34px,4vw,56px);letter-spacing:-.04em;line-height:1;margin:4px 0 14px}
+  .lp-quote{margin:0;border-radius:var(--r-lg);padding:clamp(28px,4vw,56px);background:var(--surface);box-shadow:var(--shadow-soft)}
+  .lp-quote blockquote{margin:0;font-family:var(--font-serif);font-style:italic;font-size:clamp(24px,2.8vw,40px);line-height:1.2;letter-spacing:-.01em}
+  .lp-quote figcaption{margin-top:18px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .lp-panel.dark mark.ph{background:color-mix(in srgb,var(--accent) 45%,transparent);color:var(--bg)}
+  .lp-next{max-width:1100px;margin-left:auto;margin-right:auto;padding:0 clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px);margin-top:clamp(28px,3vw,40px);text-align:left}
+  .lp-next div{border-top:1px solid var(--line);padding-top:14px}
+  .lp-next .n{font-family:var(--font-mono);font-size:11px;color:var(--accent)}
+  .lp-next h3{margin:8px 0 6px;font-family:var(--font-display);font-weight:600;font-size:18px;letter-spacing:-.02em}
+  .lp-next p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.55}
+  @media (max-width:820px){
+    .lp-stats{grid-template-columns:1fr}
+    .lp-split,.lp-next{grid-template-columns:1fr}
+  }
+  .lp-logos{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(22px,3.4vw,48px) clamp(28px,4.4vw,64px)}
+  .lp-logos img{height:clamp(30px,3.2vw,44px);width:auto;max-width:150px;object-fit:contain;filter:brightness(0);opacity:.55}
+  .lp-logos .txt{font-family:var(--font-display);font-weight:700;font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;color:var(--ink);opacity:.55;text-transform:uppercase}
   .lp-cta{padding:clamp(80px,9vw,140px) 0 clamp(80px,10vw,140px);text-align:center}
   .lp-cta .hero-cta-row{margin-top:clamp(24px,3vw,36px)}
   @media (max-width: 640px){
@@ -408,7 +447,7 @@
     .hero-pillbar a{font-size:12px;padding:9px 15px}
   }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Supplement packaging design", "serviceType": "Supplement packaging design", "url": "https://nutramedia.co/supplement-packaging-design.html", "description": "Supplement packaging design for nutraceutical and sports nutrition brands: tubs, pouches, stick packs, gummies and Amazon content, by NutraMedia, a CPG graphic design agency.", "provider": {"@id": "https://nutramedia.co/#org"}, "areaServed": "US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What supplement packaging formats do you design?", "acceptedAnswer": {"@type": "Answer", "text": "Tubs, pouches, stick packs, gummy bottles and the boxes and displays around them — across every SKU and flavor in the range."}}, {"@type": "Question", "name": "Can you redesign packaging for an existing supplement brand?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We've built new identities from scratch and reworked established brands, like Applied Nutrition's bold new approach for its US launch."}}, {"@type": "Question", "name": "Do you design for co-branded or licensed flavors?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We've designed co-branded products with Tang and Chiquita for Applied Nutrition, making both brands read clearly on one pack."}}, {"@type": "Question", "name": "Can you help us sell supplements on Amazon?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We design Amazon listing images and A+ content, including Lemme’s Amazon listings."}}, {"@type": "Question", "name": "How long does a supplement packaging project take?", "acceptedAnswer": {"@type": "Answer", "text": "Usually about 10–14 weeks from brief to press-ready files, depending on how many SKUs are in the range."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nutramedia.co/"}, {"@type": "ListItem", "position": 2, "name": "What we do", "item": "https://nutramedia.co/what-we-do.html"}, {"@type": "ListItem", "position": 3, "name": "Supplement packaging design", "item": "https://nutramedia.co/supplement-packaging-design.html"}]}, {"@type": "ProfessionalService", "@id": "https://nutramedia.co/#org", "name": "NutraMedia", "url": "https://nutramedia.co/", "logo": "https://nutramedia.co/logos/nutramedialogo.svg", "image": "https://nutramedia.co/social-card.png", "description": "Independent CPG graphic design and packaging agency for supplement, food and beverage brands.", "alternateName": "NutraMedia Studios", "email": "tk@nutramedia.co", "foundingDate": "2020", "address": {"@type": "PostalAddress", "streetAddress": "12335 FM 1097, Ste 101", "addressLocality": "Willis", "addressRegion": "TX", "postalCode": "77318", "addressCountry": "US"}, "areaServed": "US", "knowsAbout": ["CPG graphic design", "Packaging design", "Brand identity", "Supplement packaging", "Beverage packaging", "3D product rendering", "Amazon A+ content"], "sameAs": ["https://www.instagram.com/nutramedia", "https://www.linkedin.com/company/nutramedia%E2%84%A2/"]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Supplement packaging design", "serviceType": "Supplement packaging design", "url": "https://nutramedia.co/supplement-packaging-design.html", "description": "Supplement packaging design for nutraceutical and sports nutrition brands: tubs, pouches, stick packs, gummies and Amazon content, by NutraMedia, a CPG graphic design agency.", "provider": {"@id": "https://nutramedia.co/#org"}, "areaServed": "US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What supplement packaging formats do you design?", "acceptedAnswer": {"@type": "Answer", "text": "Tubs, pouches, stick packs, gummy bottles and the boxes and displays around them — across every SKU and flavor in the range."}}, {"@type": "Question", "name": "Can you redesign packaging for an existing supplement brand?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We've built new identities from scratch and reworked established brands, like Applied Nutrition's bold new approach for its US launch."}}, {"@type": "Question", "name": "Do you design for co-branded or licensed flavors?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We've designed co-branded products with Tang and Chiquita for Applied Nutrition, making both brands read clearly on one pack."}}, {"@type": "Question", "name": "Can you help us sell supplements on Amazon?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We design Amazon listing images and A+ content, built from the same system as your packaging."}}, {"@type": "Question", "name": "How long does a supplement packaging project take?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on how many SKUs and formats are in the range. We map out the timeline with you on our intro call."}}, {"@type": "Question", "name": "Do you handle FDA label requirements?", "acceptedAnswer": {"@type": "Answer", "text": "We lay out every panel to fit the required elements — statement of identity, net quantity, Supplement Facts, ingredient list and manufacturer details — and flag anything that looks off. Final claims and compliance sign-off should come from your regulatory team or attorney."}}, {"@type": "Question", "name": "Should we refresh our packaging or rebrand?", "acceptedAnswer": {"@type": "Answer", "text": "If people already recognize your brand, a refresh often does the job — like Redefine Foods, where we kept the logo and modernized everything around it. If the brand itself is holding you back, a full redesign like Fig Brew’s is the better move. We’ll tell you honestly which one you need."}}, {"@type": "Question", "name": "Can you design for retail and Amazon at the same time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We design the pack to read on shelf and as a thumbnail, then build listing and A+ content from the same system so both channels look like one brand."}}, {"@type": "Question", "name": "What files do we get at the end?", "acceptedAnswer": {"@type": "Answer", "text": "Print-ready artwork on your printer’s dielines, 3D renders and the web and Amazon assets you need to launch."}}, {"@type": "Question", "name": "Do you offer packaging consulting?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — almost all of our clients also work with us as consultants. That can mean guiding them through the print packaging process, helping finalize designs they already have, or being a second set of eyes on big packaging decisions. For Alpha Lion, for example, we consulted through their print process and helped finalize existing designs."}}, {"@type": "Question", "name": "Do you work with brands that are just starting out?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — KRĒO came to us with an idea and no brand, and we built everything from zero."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nutramedia.co/"}, {"@type": "ListItem", "position": 2, "name": "What we do", "item": "https://nutramedia.co/what-we-do.html"}, {"@type": "ListItem", "position": 3, "name": "Supplement packaging design", "item": "https://nutramedia.co/supplement-packaging-design.html"}]}, {"@type": "ProfessionalService", "@id": "https://nutramedia.co/#org", "name": "NutraMedia", "url": "https://nutramedia.co/", "logo": "https://nutramedia.co/logos/nutramedialogo.svg", "image": "https://nutramedia.co/social-card.png", "description": "Independent CPG graphic design and packaging agency for supplement, food and beverage brands.", "alternateName": "NutraMedia Studios", "email": "tk@nutramedia.co", "foundingDate": "2020", "address": {"@type": "PostalAddress", "streetAddress": "12335 FM 1097, Ste 101", "addressLocality": "Willis", "addressRegion": "TX", "postalCode": "77318", "addressCountry": "US"}, "areaServed": "US", "knowsAbout": ["CPG graphic design", "Packaging design", "Brand identity", "Supplement packaging", "Beverage packaging", "3D product rendering", "Amazon A+ content"], "sameAs": ["https://www.instagram.com/nutramedia", "https://www.linkedin.com/company/nutramedia%E2%84%A2/"]}]}</script>
 <!-- Vercel Web Analytics (cookieless) -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -443,6 +482,12 @@
 
 <main class="wrap">
 
+  <section class="lp-stats" aria-label="NutraMedia at a glance">
+    <div class="lp-stat"><b>Walmart</b><span>and The Vitamin Shoppe — where packaging we designed is on shelf</span></div>
+    <div class="lp-stat"><b>2020</b><span>independent and founder-run since</span></div>
+    <div class="lp-stat"><b>100+</b><span>brands built from zero, like KRĒO</span></div>
+  </section>
+
   <section class="lp-sec">
     <h2 class="lp-h2">What a supplement pack <span class="serif">has to do.</span></h2>
     <p class="lp-lede">Supplement shoppers decide fast, on crowded shelves and tiny search thumbnails. Every pack we design is built around four jobs.</p>
@@ -455,16 +500,65 @@
   </section>
   <section class="lp-sec">
     <h2 class="lp-h2">Supplement brands <span class="serif">we've designed for.</span></h2>
-    <p class="lp-lede">Stick packs, pre-workouts, protein and gummies — from new identities to a UK brand's US launch.</p>
+    <p class="lp-lede">Stick packs, pre-workouts, powders and hydration — from brands built from zero to a UK brand's US launch.</p>
     <div class="lp-work">
-      <a class="lp-card" href="work-kreo.html"><img src="Images/Kreo.jpg" alt="Kreo packaging by NutraMedia" loading="lazy"><div><b>Kreo</b><span>Packaging · Identity</span></div></a>
-      <a class="lp-card" href="work-applied-nutrition-abe.html"><img src="Images/ANABE.jpeg" alt="Applied Nutrition packaging by NutraMedia" loading="lazy"><div><b>Applied Nutrition</b><span>Packaging · Identity</span></div></a>
-      <a class="lp-card" href="work-lemme.html"><img src="Images/Lemme.jpeg" alt="Lemme packaging by NutraMedia" loading="lazy"><div><b>Lemme</b><span>Amazon Content</span></div></a>
+      <a class="lp-card" href="work-kreo.html"><img src="Images/Kreo.jpg" alt="Kreo packaging by NutraMedia" loading="lazy"><div><b>Kreo</b><span>Brand Identity · Packaging</span></div></a>
+      <a class="lp-card" href="work-applied-nutrition-abe.html"><img src="Images/ANABE.jpeg" alt="Applied Nutrition packaging by NutraMedia" loading="lazy"><div><b>Applied Nutrition</b><span>Packaging</span></div></a>
+      <a class="lp-card" href="work-jocko-fuel.html"><img src="Images/JockoFuelEnergy.jpg" alt="Jocko Fuel packaging by NutraMedia" loading="lazy"><div><b>Jocko Fuel</b><span>Packaging</span></div></a>
     </div>
   </section>
+
+
+  <section class="lp-sec">
+    <h2 class="lp-h2">Brands we’ve <span class="serif">worked with.</span></h2>
+    <p class="lp-lede">Packaging, identity and consulting for supplement, food and beverage brands — from first launch to category leaders.</p>
+    <div class="lp-logos">
+      <img src="logos/ANSTACKED_BLACK_TRANSPARENT.png" alt="Applied Nutrition" loading="lazy">
+      <img src="logos/ABE-Logo-Black.png" alt="ABE" loading="lazy">
+      <img src="logos/Jocko%20Fuel%20Logo.png" alt="Jocko Fuel" loading="lazy">
+      <img src="logos/Redefine%20foods.svg" alt="Redefine Foods" loading="lazy">
+      <img src="logos/NootropicsDepot_logo_black.png" alt="Nootropics Depot" loading="lazy">
+      <img src="logos/nutrabio-logo.png" alt="NutraBio" loading="lazy">
+      <img src="logos/Primeval%20Logo.png" alt="Primeval" loading="lazy">
+      <img src="logos/BBLogo.png" alt="Beast Bites" loading="lazy">
+      <img src="logos/FigBrewLogo.png" alt="Fig Brew" loading="lazy">
+      <img src="logos/AlphaLion_logo_black.png" alt="Alpha Lion" loading="lazy">
+    </div>
+  </section>
+
+  <section class="lp-sec">
+    <h2 class="lp-h2">Every format, <span class="serif">one system.</span></h2>
+    <p class="lp-lede">Supplement ranges rarely live in one format. We design the whole family so a tub, a stick pack and an Amazon thumbnail all read as the same brand.</p>
+    <div class="lp-formats">
+      <a class="lp-format" href="work-kreo.html"><h3>Stick packs</h3><p>Single-serve formats where every millimeter counts and trust marks still have to read.</p><span class="go">See KRĒO →</span></a>
+      <a class="lp-format" href="work-applied-nutrition-abe.html"><h3>Powder tubs</h3><p>Pre-workout and protein tubs built to win the loudest aisle in the store.</p><span class="go">See Applied Nutrition →</span></a>
+      <a class="lp-format" href="work-jocko-fuel.html"><h3>Powders &amp; hydration</h3><p>Lines that stand apart on shelf and still read as one brand.</p><span class="go">See Jocko Fuel →</span></a>
+      <div class="lp-format"><h3>Amazon listings</h3><p>Listing and A+ content in every format a listing needs.</p></div>
+      <div class="lp-format"><h3>Packaging consulting</h3><p>Almost every client also brings us in as a consultant — from print production to finishing designs they already have.</p></div>
+      <div class="lp-format"><h3>Gummies &amp; capsules</h3><p>Bottles and labels where the benefit, flavor and dose have to fit a small front panel.</p></div>
+    </div>
+  </section>
+
+  <section class="lp-sec">
+    <h2 class="lp-h2">Retail shelf <span class="serif">or Amazon page.</span></h2>
+    <p class="lp-lede">Where your product sells changes what the pack has to do first.</p>
+    <div class="lp-split">
+      <div class="lp-panel">
+        <h3>In store</h3>
+        <p>Big-box and specialty retail like Walmart, GNC and The Vitamin Shoppe: you have seconds, from several feet away.</p>
+        <ul><li>Brand and product readable from across the aisle</li><li>Flavor and format coding that sorts a full range</li><li>Display boxes and shelf trays that work with the pack</li></ul>
+      </div>
+      <div class="lp-panel dark">
+        <h3>Online</h3>
+        <p>Amazon and DTC: your pack is a thumbnail first and a product page second.</p>
+        <ul><li>Front panels that survive being shrunk to a thumbnail</li><li>Listing images and A+ content built from the same system</li><li>Every size and format the listing needs, ready to upload</li></ul>
+      </div>
+    </div>
+  </section>
+
   <section class="lp-sec">
     <h2 class="lp-h2">How we <span class="serif">work.</span></h2>
-    <p class="lp-lede">One senior team from start to finish. Most engagements run three to four months, with brief to press-ready files in about 10–14 weeks.</p>
+    <p class="lp-lede">One senior team from start to finish. Every project is scoped to your range, so we map out the timeline together on our first call.</p>
     <ol class="lp-steps">
       <li><span class="n">01</span><div><h3>Brief &amp; strategy</h3><p>We start with the product, the shopper and the shelf: who you're competing with, what has to read first, and where the brand needs to go.</p></div></li>
       <li><span class="n">02</span><div><h3>Concepts</h3><p>Distinct design directions, shown on real packaging formats — not just flat logos — so you can judge them the way a shopper will.</p></div></li>
@@ -472,6 +566,9 @@
       <li><span class="n">04</span><div><h3>Production-ready files</h3><p>Print-ready artwork for your printer and co-packer, plus the assets you need online, from Amazon listings to social.</p></div></li>
     </ol>
   </section>
+
+
+
 
   <!-- ─── FAQ ─────────────────────────────────────────────────── -->
   <section class="lp-sec">
@@ -491,11 +588,35 @@
     </details>
     <details>
       <summary>Can you help us sell supplements on Amazon?</summary>
-      <p>Yes. We design Amazon listing images and A+ content, including for the entire <a href="work-lemme.html">Lemme</a> line.</p>
+      <p>Yes. We design Amazon listing images and A+ content, built from the same system as your packaging.</p>
     </details>
     <details>
       <summary>How long does a supplement packaging project take?</summary>
-      <p>Usually about 10–14 weeks from brief to press-ready files, depending on how many SKUs are in the range.</p>
+      <p>It depends on how many SKUs and formats are in the range. We map out the timeline with you on our intro call.</p>
+    </details>
+    <details>
+      <summary>Do you handle FDA label requirements?</summary>
+      <p>We lay out every panel to fit the required elements — statement of identity, net quantity, Supplement Facts, ingredient list and manufacturer details — and flag anything that looks off. Final claims and compliance sign-off should come from your regulatory team or attorney.</p>
+    </details>
+    <details>
+      <summary>Should we refresh our packaging or rebrand?</summary>
+      <p>If people already recognize your brand, a refresh often does the job — like <a href="work-redefine-foods.html">Redefine Foods</a>, where we kept the logo and modernized everything around it. If the brand itself is holding you back, a full redesign like <a href="work-fig-brew.html">Fig Brew’s</a> is the better move. We’ll tell you honestly which one you need.</p>
+    </details>
+    <details>
+      <summary>Can you design for retail and Amazon at the same time?</summary>
+      <p>Yes. We design the pack to read on shelf and as a thumbnail, then build listing and A+ content from the same system so both channels look like one brand.</p>
+    </details>
+    <details>
+      <summary>What files do we get at the end?</summary>
+      <p>Print-ready artwork on your printer’s dielines, 3D renders and the web and Amazon assets you need to launch.</p>
+    </details>
+    <details>
+      <summary>Do you offer packaging consulting?</summary>
+      <p>Yes — almost all of our clients also work with us as consultants. That can mean guiding them through the print packaging process, helping finalize designs they already have, or being a second set of eyes on big packaging decisions. For Alpha Lion, for example, we consulted through their print process and helped finalize existing designs.</p>
+    </details>
+    <details>
+      <summary>Do you work with brands that are just starting out?</summary>
+      <p>Yes — <a href="work-kreo.html">KRĒO</a> came to us with an idea and no brand, and we built everything from zero.</p>
     </details>
     </div>
   </section>
@@ -510,6 +631,12 @@
       <a href="what-we-do.html" class="is-primary">What we do →</a>
       <a href="https://forms.monday.com/forms/15ba4a48b9ab7feed4bb85ee4476196a?r=use1" target="_blank" rel="noopener" class="is-cta">Start a project</a>
     </div>
+  </div>
+
+  <div class="lp-next">
+    <div><span class="n">01</span><h3>Tell us about the project</h3><p>A few lines about your product, formats and timing is enough.</p></div>
+    <div><span class="n">02</span><h3>We reply within 48 hours</h3><p>We’ll take a look and come back with any questions.</p></div>
+    <div><span class="n">03</span><h3>Intro call</h3><p>A short call with the designer to talk scope, timeline and budget.</p></div>
   </div>
 </section>
 
